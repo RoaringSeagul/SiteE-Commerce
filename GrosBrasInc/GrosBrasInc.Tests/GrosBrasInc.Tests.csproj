@@ -6,7 +6,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{600877CC-8440-4FD2-BF43-0F9EE155A804}</ProjectGuid>
+    <ProjectGuid>{A497E63A-56F2-45FC-A3D1-C42CC15EA98F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GrosBrasInc.Tests</RootNamespace>
@@ -93,7 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GrosBrasInc\GrosBrasInc.csproj">
-      <Project>{C17638D2-0D66-4D1C-8403-FAC3A6B0F1EE}</Project>
+      <Project>{F7D624B6-68D2-4727-890A-A6991AC56F2C}</Project>
       <Name>GrosBrasInc</Name>
     </ProjectReference>
   </ItemGroup>
