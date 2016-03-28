@@ -10,6 +10,6 @@ namespace GrosBrasInc.Models
     {
         [Key]
         public int PanierID { get; set; }
-        public int ArticleID { get; set; }
+        public virtual IEnumerable<Article> Articles { get; set; }
     }
 }

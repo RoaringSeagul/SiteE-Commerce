@@ -7,15 +7,16 @@ using System.Web;
 
 namespace GrosBrasInc.Models
 {
-    public class Client
+    public class Message
     {
         [Key]
-        public int ClientID { get; set; }
+        public int MessageID { get; set; }
         public virtual string ApplicationUserID { get; set; }
         [ForeignKey("ApplicationUserID")]
-        public virtual ApplicationUser User { get; set; }
-        public string CardNumber { get; set; }
-        public string PaypalUrl { get; set; }
-
+        public virtual ApplicationUser Author { get; set; }
+        public string MessageBody { get; set; }
+        public int SujetID { get; set; }
+        [ForeignKey("SujetID")]
+        public virtual Sujet ParentSujet { get; set; }
     }
 }
