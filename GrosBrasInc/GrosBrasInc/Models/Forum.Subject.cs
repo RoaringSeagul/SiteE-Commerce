@@ -8,6 +8,7 @@ namespace GrosBrasInc.Models
 {
     public class Sujet
     {
+        [ScaffoldColumn(false)]
         public int SujetID { get; set; }
         public string SubjectTitle { get; set; }
         public string SubjectBody { get; set; }

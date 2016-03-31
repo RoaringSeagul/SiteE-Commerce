@@ -116,7 +116,7 @@ namespace GrosBrasInc.Migrations
                     Email = "admin@grosbrasinc.ca",
                     UserName = "admin@grosbrasinc.ca",
                     PasswordHash = pass.HashPassword("Gb123!"),
-                    SecurityStamp = Guid.NewGuid().ToString(),
+                    SecurityStamp = Guid.NewGuid().ToString()
                 },
 
                 new ApplicationUser()

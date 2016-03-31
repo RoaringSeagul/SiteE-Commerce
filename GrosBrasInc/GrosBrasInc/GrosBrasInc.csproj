@@ -199,9 +199,11 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LegalController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <None Include="Controllers\PanierController.cs.bak" />
     <Compile Include="Controllers\PanierController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Global.asax.cs">
@@ -223,6 +225,50 @@
     <Compile Include="Migrations\201603310028286_UPDATEDisplayFormatINArticle.Designer.cs">
       <DependentUpon>201603310028286_UPDATEDisplayFormatINArticle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201603311544413_ADDImageINArticles.cs" />
+    <Compile Include="Migrations\201603311544413_ADDImageINArticles.Designer.cs">
+      <DependentUpon>201603311544413_ADDImageINArticles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603311629229_ADDLienPanierINClient.cs" />
+    <Compile Include="Migrations\201603311629229_ADDLienPanierINClient.Designer.cs">
+      <DependentUpon>201603311629229_ADDLienPanierINClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603311633081_ADDPanierINApplicationUser.cs" />
+    <Compile Include="Migrations\201603311633081_ADDPanierINApplicationUser.Designer.cs">
+      <DependentUpon>201603311633081_ADDPanierINApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603312006330_REMOVEPanierINApplicationUser.cs" />
+    <Compile Include="Migrations\201603312006330_REMOVEPanierINApplicationUser.Designer.cs">
+      <DependentUpon>201603312006330_REMOVEPanierINApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603312007473_UPDATEPanierIDINPanierANDREMOVEPanierINClient.cs" />
+    <Compile Include="Migrations\201603312007473_UPDATEPanierIDINPanierANDREMOVEPanierINClient.Designer.cs">
+      <DependentUpon>201603312007473_UPDATEPanierIDINPanierANDREMOVEPanierINClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603312028434_UPDATEPanier.cs" />
+    <Compile Include="Migrations\201603312028434_UPDATEPanier.Designer.cs">
+      <DependentUpon>201603312028434_UPDATEPanier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603312037231_UPDATEArticlesINPanier.cs" />
+    <Compile Include="Migrations\201603312037231_UPDATEArticlesINPanier.Designer.cs">
+      <DependentUpon>201603312037231_UPDATEArticlesINPanier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603312045563_ADDOrdersANDOrderDetailsINDB.cs" />
+    <Compile Include="Migrations\201603312045563_ADDOrdersANDOrderDetailsINDB.Designer.cs">
+      <DependentUpon>201603312045563_ADDOrdersANDOrderDetailsINDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603312049269_UPDATETotalINOrder.cs" />
+    <Compile Include="Migrations\201603312049269_UPDATETotalINOrder.Designer.cs">
+      <DependentUpon>201603312049269_UPDATETotalINOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603312050276_UPDATEUnitPriceINOrderDetails.cs" />
+    <Compile Include="Migrations\201603312050276_UPDATEUnitPriceINOrderDetails.Designer.cs">
+      <DependentUpon>201603312050276_UPDATEUnitPriceINOrderDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603312120172_UPDATEDisplayMoneyINOrderANDOrderDetailsANDPanier.cs" />
+    <Compile Include="Migrations\201603312120172_UPDATEDisplayMoneyINOrderANDOrderDetailsANDPanier.Designer.cs">
+      <DependentUpon>201603312120172_UPDATEDisplayMoneyINOrderANDOrderDetailsANDPanier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Article.cs" />
@@ -233,9 +279,15 @@
     <Compile Include="Models\Forum.Subject.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetails.cs" />
     <Compile Include="Models\Panier.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\ShoppingCartRemoveViewModel.cs" />
+    <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
+    <Content Include="Views\AddressAndPayment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -305,11 +357,13 @@
     <Content Include="Views\Articles\Details.cshtml" />
     <Content Include="Views\Articles\Edit.cshtml" />
     <Content Include="Views\Articles\Index.cshtml" />
+    <Content Include="Views\Panier\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Checkout\" />
     <Folder Include="Views\Legal\" />
-    <Folder Include="Views\Panier\" />
+    <Folder Include="Views\ShoppingCart\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -331,6 +385,39 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201603310028286_UPDATEDisplayFormatINArticle.resx">
       <DependentUpon>201603310028286_UPDATEDisplayFormatINArticle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603311544413_ADDImageINArticles.resx">
+      <DependentUpon>201603311544413_ADDImageINArticles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603311629229_ADDLienPanierINClient.resx">
+      <DependentUpon>201603311629229_ADDLienPanierINClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603311633081_ADDPanierINApplicationUser.resx">
+      <DependentUpon>201603311633081_ADDPanierINApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603312006330_REMOVEPanierINApplicationUser.resx">
+      <DependentUpon>201603312006330_REMOVEPanierINApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603312007473_UPDATEPanierIDINPanierANDREMOVEPanierINClient.resx">
+      <DependentUpon>201603312007473_UPDATEPanierIDINPanierANDREMOVEPanierINClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603312028434_UPDATEPanier.resx">
+      <DependentUpon>201603312028434_UPDATEPanier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603312037231_UPDATEArticlesINPanier.resx">
+      <DependentUpon>201603312037231_UPDATEArticlesINPanier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603312045563_ADDOrdersANDOrderDetailsINDB.resx">
+      <DependentUpon>201603312045563_ADDOrdersANDOrderDetailsINDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603312049269_UPDATETotalINOrder.resx">
+      <DependentUpon>201603312049269_UPDATETotalINOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603312050276_UPDATEUnitPriceINOrderDetails.resx">
+      <DependentUpon>201603312050276_UPDATEUnitPriceINOrderDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603312120172_UPDATEDisplayMoneyINOrderANDOrderDetailsANDPanier.resx">
+      <DependentUpon>201603312120172_UPDATEDisplayMoneyINOrderANDOrderDetailsANDPanier.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

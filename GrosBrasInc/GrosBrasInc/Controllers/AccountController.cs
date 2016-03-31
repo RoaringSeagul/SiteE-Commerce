@@ -79,6 +79,7 @@ namespace GrosBrasInc.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    MigrateShoppingCart(model.Email);
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -89,6 +90,14 @@ namespace GrosBrasInc.Controllers
                     ModelState.AddModelError("", "Invalid login attempt.");
                     return View(model);
             }
+        }
+
+        private void MigrateShoppingCart(string email)
+        {
+                // Associate shopping cart items with logged-in user
+                var cart = ShoppingCart.GetCart(this.HttpContext);
+                cart.MigrateCart(email);
+                Session[ShoppingCart.CartSessionKey] = email;
         }
 
         //
@@ -155,6 +164,7 @@ namespace GrosBrasInc.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    MigrateShoppingCart(model.Email);
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771

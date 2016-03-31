@@ -10,6 +10,7 @@ namespace GrosBrasInc.Models
     public class Commande
     {
         [Key]
+        [ScaffoldColumn(false)]
         public int CommandeID { get; set; }
         public float SousTotal { get; set; }
         public float Taxes { get; set; }

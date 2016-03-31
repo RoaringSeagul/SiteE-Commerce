@@ -9,6 +9,7 @@ namespace GrosBrasInc.Models
     public class Categorie
     {
         [Key]
+        [ScaffoldColumn(false)]
         public int CategorieID { get; set; }
         public string NomCategorie { get; set; }
     }

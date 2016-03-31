@@ -10,12 +10,13 @@ namespace GrosBrasInc.Models
     public class Client
     {
         [Key]
+        [ScaffoldColumn(false)]
         public int ClientID { get; set; }
+        [ScaffoldColumn(false)]
         public virtual string ApplicationUserID { get; set; }
         [ForeignKey("ApplicationUserID")]
         public virtual ApplicationUser User { get; set; }
         public string CardNumber { get; set; }
         public string PaypalUrl { get; set; }
-
     }
 }

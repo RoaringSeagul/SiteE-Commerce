@@ -7,122 +7,118 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using GrosBrasInc.Models;
-using System.IO;
 
 namespace GrosBrasInc.Controllers
 {
-    public class ArticlesController : Controller
+    public class PanierController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Articles
-        public ActionResult Index()
+        // GET: Panier
+        public ActionResult Index(string userName)
         {
-            var articles = db.Articles.Include(a => a.Categorie);
-            return View(articles.ToList());
+            return View(db.Users.Where(p => p.UserName == userName).ToList());
         }
 
-        // GET: Articles/Details/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult RemoveFromPanier()
+        {
+
+            return View();
+        }
+
+        // GET: Panier/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Article article = db.Articles.Find(id);
-            if (article == null)
+            Panier panier = db.Paniers.Find(id);
+            if (panier == null)
             {
                 return HttpNotFound();
             }
-            return View(article);
+            return View(panier);
         }
 
-        // GET: Articles/Create
+        // GET: Panier/Create
         public ActionResult Create()
         {
-            ViewBag.Categories = new SelectList(db.Categories, "CategorieID", "NomCategorie");
             return View();
         }
 
-        // POST: Articles/Create
+        // POST: Panier/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ArticleID,NomArticle,Description,Prix,CategorieID,Fichier")] Article article)
+        public ActionResult Create([Bind(Include = "PanierID")] Panier panier)
         {
             if (ModelState.IsValid)
             {
-                article.ImageNom = Path.GetFileName(article.Fichier.FileName);
-                article.ImageTaille = article.Fichier.ContentLength;
-                article.ImageType = article.Fichier.ContentType;
-                article.ImageData = new byte[article.ImageTaille];
-                article.Fichier.InputStream.Read(article.ImageData, 0, article.ImageTaille);
-
-                db.Articles.Add(article);
+                db.Paniers.Add(panier);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Categories = new SelectList(db.Categories, "CategorieID", "NomCategorie", article.ArticleID);
-            return View(article);
+            return View(panier);
         }
 
-        // GET: Articles/Edit/5
+        // GET: Panier/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Article article = db.Articles.Find(id);
-            if (article == null)
+            Panier panier = db.Paniers.Find(id);
+            if (panier == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.CategorieID = new SelectList(db.Categories, "CategorieID", "NomCategorie", article.CategorieID);
-            return View(article);
+            return View(panier);
         }
 
-        // POST: Articles/Edit/5
+        // POST: Panier/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ArticleID,NomArticle,Description,Prix,CategorieID,ImageNom,ImageType,ImageTaille,ImageData")] Article article)
+        public ActionResult Edit([Bind(Include = "PanierID")] Panier panier)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(article).State = EntityState.Modified;
+                db.Entry(panier).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CategorieID = new SelectList(db.Categories, "CategorieID", "NomCategorie", article.CategorieID);
-            return View(article);
+            return View(panier);
         }
 
-        // GET: Articles/Delete/5
+        // GET: Panier/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Article article = db.Articles.Find(id);
-            if (article == null)
+            Panier panier = db.Paniers.Find(id);
+            if (panier == null)
             {
                 return HttpNotFound();
             }
-            return View(article);
+            return View(panier);
         }
 
-        // POST: Articles/Delete/5
+        // POST: Panier/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Article article = db.Articles.Find(id);
-            db.Articles.Remove(article);
+            Panier panier = db.Paniers.Find(id);
+            db.Paniers.Remove(panier);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

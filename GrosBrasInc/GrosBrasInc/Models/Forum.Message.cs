@@ -10,6 +10,7 @@ namespace GrosBrasInc.Models
     public class Message
     {
         [Key]
+        [ScaffoldColumn(false)]
         public int MessageID { get; set; }
         public virtual string ApplicationUserID { get; set; }
         [ForeignKey("ApplicationUserID")]

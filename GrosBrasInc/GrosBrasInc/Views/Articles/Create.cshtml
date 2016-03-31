@@ -6,11 +6,11 @@
 
 <h2>Create</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Create", "Articles", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
         <h4>Article</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -38,11 +38,20 @@
             </div>
         </div>
 
+        <!--TODO Categories rolldowns!!-->
         <div class="form-group">
-            @Html.LabelFor(model => model.CategorieID, "CategorieID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Categorie.NomCategorie, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("CategorieID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.CategorieID, "", new { @class = "text-danger" })
+                @Html.DropDownList("CategorieId", ViewBag.Categories as SelectList)
+                @Html.ValidationMessageFor(model => model.Categorie.NomCategorie, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Fichier, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Fichier, new { type = "file" })
+                @Html.ValidationMessageFor(model => model.Fichier, "", new { @class = "text-danger" })
             </div>
         </div>
 
