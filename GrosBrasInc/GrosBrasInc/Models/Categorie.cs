@@ -11,6 +11,5 @@ namespace GrosBrasInc.Models
         [Key]
         public int CategorieID { get; set; }
         public string NomCategorie { get; set; }
-        public virtual ICollection<Article> Articles { get; set; }
     }
 }

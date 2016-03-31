@@ -12,9 +12,8 @@ namespace GrosBrasInc.Models
         public int ArticleID { get; set; }
         public string NomArticle { get; set; }
         public string Description { get; set; }
+        [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = true)]
         public float Prix { get; set; }
-        public int PanierID { get; set; }
-        public virtual Panier Panier { get;set; }
         public int CategorieID { get; set; }
         public virtual Categorie Categorie { get; set; }
     }

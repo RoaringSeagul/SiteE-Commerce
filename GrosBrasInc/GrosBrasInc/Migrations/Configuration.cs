@@ -17,9 +17,45 @@ namespace GrosBrasInc.Migrations
 
         protected override void Seed(GrosBrasInc.Models.ApplicationDbContext context)
         {
-            AddRoles(context);
-            AddUser(context);
-            AddUserRole(context);
+            //AddRoles(context);
+            //AddUser(context);
+            //AddUserRole(context);
+            //AddArticlesCategorie(context);
+            //AddArticles(context);
+        }
+
+        private void AddArticlesCategorie(ApplicationDbContext context)
+        {
+            Categorie[] categories =
+            {
+                new Categorie() { NomCategorie = "Gros" },    
+                new Categorie() { NomCategorie = "Moyen" },    
+                new Categorie() { NomCategorie = "Minus" },
+                new Categorie() { NomCategorie = "Coureur" }
+            };
+
+            context.Categories.AddOrUpdate(p => p.NomCategorie, categories);
+            context.SaveChanges(context);
+        }
+
+        private void AddArticles(ApplicationDbContext context)
+        {
+            Article[] articles =
+            {
+                new Article() { NomArticle =  "Chest", Categorie = context.Categories.Where(p => p.NomCategorie == "Gros").FirstOrDefault(),
+                                    Description = "Des affaire pour un gros chest", Prix = 12.99f },
+                new Article() { NomArticle =  "Bras", Categorie = context.Categories.Where(p => p.NomCategorie == "Gros").FirstOrDefault(),
+                                    Description = "Des affaire pour un gros chest", Prix = 15.99f },
+                new Article() { NomArticle =  "Dos", Categorie = context.Categories.Where(p => p.NomCategorie == "Gros").FirstOrDefault(),
+                                    Description = "Des affaire pour un gros chest", Prix = 17.99f },
+                new Article() { NomArticle =  "Shake", Categorie = context.Categories.Where(p => p.NomCategorie == "Gros").FirstOrDefault(),
+                                    Description = "Des affaire pour un gros chest", Prix = 19.99f },
+                new Article() { NomArticle =  "Cancer", Categorie = context.Categories.Where(p => p.NomCategorie == "Gros").FirstOrDefault(),
+                                    Description = "Des affaire pour un gros chest", Prix = 256301.00f }
+            };
+
+            context.Articles.AddOrUpdate(p => p.NomArticle, articles);
+            context.SaveChanges(context);
         }
 
         private void AddRoles(ApplicationDbContext context)

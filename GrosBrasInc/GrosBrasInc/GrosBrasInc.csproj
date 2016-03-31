@@ -198,14 +198,30 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LegalController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PanierController.cs" />
+    <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201603281653109_Initialisation.cs" />
     <Compile Include="Migrations\201603281653109_Initialisation.Designer.cs">
       <DependentUpon>201603281653109_Initialisation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603310000545_RemovePanierINArticles.cs" />
+    <Compile Include="Migrations\201603310000545_RemovePanierINArticles.Designer.cs">
+      <DependentUpon>201603310000545_RemovePanierINArticles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603310003170_RemoveICollectionArticlesINCategorie.cs" />
+    <Compile Include="Migrations\201603310003170_RemoveICollectionArticlesINCategorie.Designer.cs">
+      <DependentUpon>201603310003170_RemoveICollectionArticlesINCategorie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603310028286_UPDATEDisplayFormatINArticle.cs" />
+    <Compile Include="Migrations\201603310028286_UPDATEDisplayFormatINArticle.Designer.cs">
+      <DependentUpon>201603310028286_UPDATEDisplayFormatINArticle.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -281,9 +297,19 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Store\Index.cshtml" />
+    <Content Include="Views\Store\Browse.cshtml" />
+    <Content Include="Views\Store\Details.cshtml" />
+    <Content Include="Views\Articles\Create.cshtml" />
+    <Content Include="Views\Articles\Delete.cshtml" />
+    <Content Include="Views\Articles\Details.cshtml" />
+    <Content Include="Views\Articles\Edit.cshtml" />
+    <Content Include="Views\Articles\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Legal\" />
+    <Folder Include="Views\Panier\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -296,6 +322,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201603281653109_Initialisation.resx">
       <DependentUpon>201603281653109_Initialisation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603310000545_RemovePanierINArticles.resx">
+      <DependentUpon>201603310000545_RemovePanierINArticles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603310003170_RemoveICollectionArticlesINCategorie.resx">
+      <DependentUpon>201603310003170_RemoveICollectionArticlesINCategorie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603310028286_UPDATEDisplayFormatINArticle.resx">
+      <DependentUpon>201603310028286_UPDATEDisplayFormatINArticle.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
