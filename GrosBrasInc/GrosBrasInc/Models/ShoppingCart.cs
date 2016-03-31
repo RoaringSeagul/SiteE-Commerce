@@ -90,8 +90,7 @@ namespace GrosBrasInc.Models
 
         public List<Panier> GetCartItems()
         {
-            return db.Paniers.Where(
-            cart => cart.KeyPanier == ShoppingCartID).ToList();
+            return db.Paniers.Where(p => p.KeyPanier == ShoppingCartID).ToList();
         }
 
         public int GetCount()
