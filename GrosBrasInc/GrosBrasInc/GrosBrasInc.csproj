@@ -281,6 +281,7 @@
     <Compile Include="Models\Commande.cs" />
     <Compile Include="Models\Forum.Message.cs" />
     <Compile Include="Models\Forum.Subject.cs" />
+    <Compile Include="Models\HttpContextManager.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Order.cs" />
@@ -288,12 +289,17 @@
     <Compile Include="Models\Panier.cs" />
     <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ressource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ressource.resx</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\ShoppingCartRemoveViewModel.cs" />
     <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
     <Content Include="Views\Checkout\AddressAndPayment.cshtml" />
     <Content Include="Views\Checkout\Complete.cshtml" />
-    <Content Include="Views\Panier\CartSummary.cshtml" />
+    <Content Include="Views\Panier\_CartSummary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -424,6 +430,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201603312239030_UPDATERestrictions.resx">
       <DependentUpon>201603312239030_UPDATERestrictions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ressource.fr.resx" />
+    <EmbeddedResource Include="Ressource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Ressource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

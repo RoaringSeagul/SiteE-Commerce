@@ -10,12 +10,42 @@ namespace GrosBrasInc.Models
     {
         ApplicationDbContext db = new ApplicationDbContext();
         string ShoppingCartID { get; set; }
+        private string cartID;
+
+        public string CartID
+        {
+            get
+            {
+                if (HttpContextManager.Current.Session[CartSessionKey] == null)
+                {
+                    if (HttpContextManager.Current.User != null && !string.IsNullOrWhiteSpace(HttpContextManager.Current.User.Identity.Name))
+                    {
+                        HttpContextManager.Current.Session[CartSessionKey] = HttpContextManager.Current.User.Identity.Name;
+                    }
+                    else
+                    {
+                        // Generate a new random GUID using System.Guid class
+                        Guid tempCartId = Guid.NewGuid();
+                        // Send tempCartId back to client as a cookie
+                        HttpContextManager.Current.Session[CartSessionKey] = tempCartId.ToString();
+                    }
+                }
+                return HttpContextManager.Current.Session[CartSessionKey].ToString();
+            }
+
+            set
+            {
+                cartID = value;
+            }
+        }
+
         public const string CartSessionKey = "CartID";
+
 
         public static ShoppingCart GetCart(HttpContextBase context)
         {
             var cart = new ShoppingCart();
-            //cart.ShoppingCartID = cart.GetCartID(context);
+            cart.ShoppingCartID = cart.CartID;
             return cart;
         }
 
@@ -142,27 +172,6 @@ namespace GrosBrasInc.Models
             EmptyCart();
             // Return the OrderId as the confirmation number
             return order.OrderId;
-        }
-
-        // We're using HttpContextBase to allow access to cookies.
-        public string GetCartId(HttpContextBase context)
-        {
-            if (context.Session[CartSessionKey] == null)
-            {
-                if (!string.IsNullOrWhiteSpace(context.User.Identity.Name))
-                {
-                    context.Session[CartSessionKey] =
-                    context.User.Identity.Name;
-                }
-                else
-                {
-                    // Generate a new random GUID using System.Guid class
-                    Guid tempCartId = Guid.NewGuid();
-                    // Send tempCartId back to client as a cookie
-                    context.Session[CartSessionKey] = tempCartId.ToString();
-                }
-            }
-            return context.Session[CartSessionKey].ToString();
         }
 
         // When a user has logged in, migrate their shopping cart to

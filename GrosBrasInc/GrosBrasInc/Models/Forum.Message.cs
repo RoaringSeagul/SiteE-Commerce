@@ -14,7 +14,9 @@ namespace GrosBrasInc.Models
         public int MessageID { get; set; }
         public virtual string ApplicationUserID { get; set; }
         [ForeignKey("ApplicationUserID")]
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource), Name = "Forum-Message_Author")]
         public virtual ApplicationUser Author { get; set; }
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource), Name = "Forum-Message_MessageBody")]
         public string MessageBody { get; set; }
         public int SujetID { get; set; }
         [ForeignKey("SujetID")]

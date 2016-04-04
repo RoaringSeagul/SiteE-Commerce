@@ -12,8 +12,11 @@ namespace GrosBrasInc.Models
         [Key]
         [ScaffoldColumn(false)]
         public int CommandeID { get; set; }
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource), Name = "Commande_SousTotal")]
         public float SousTotal { get; set; }
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource), Name = "Commande_Taxes")]
         public float Taxes { get; set; }
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource), Name = "Commande_Total")]
         public float Total { get; set; }
         public int ClientID { get; set; }
         [ForeignKey("ClientID")]
