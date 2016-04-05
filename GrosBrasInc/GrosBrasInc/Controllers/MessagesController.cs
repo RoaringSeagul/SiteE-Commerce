@@ -10,107 +10,116 @@ using GrosBrasInc.Models;
 
 namespace GrosBrasInc.Controllers
 {
-    public class ForumSubjectController : Controller
+    public class MessagesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: ForumSubject
+        // GET: Messages
         public ActionResult Index()
         {
-            return View(db.Sujets.ToList());
+            var messages = db.Messages.Include(m => m.Author).Include(m => m.ParentSujet);
+            return View(messages.ToList());
         }
 
-        // GET: ForumSubject/Details/5
+        // GET: Messages/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Sujet sujet = db.Sujets.Find(id);
-            if (sujet == null)
+            Message message = db.Messages.Find(id);
+            if (message == null)
             {
                 return HttpNotFound();
             }
-            return View(sujet);
+            return View(message);
         }
 
-        // GET: ForumSubject/Create
+        // GET: Messages/Create
         public ActionResult Create()
         {
+            //ViewBag.ApplicationUserID = new SelectList(db.ApplicationUsers, "Id", "Email");
+            ViewBag.SujetID = new SelectList(db.Sujets, "SujetID", "SubjectTitle");
             return View();
         }
 
-        // POST: ForumSubject/Create
+        // POST: Messages/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "SujetID,SubjectTitle,SubjectBody")] Sujet sujet)
+        public ActionResult Create([Bind(Include = "MessageID,ApplicationUserID,MessageBody,SujetID")] Message message)
         {
             if (ModelState.IsValid)
             {
-                db.Sujets.Add(sujet);
+                db.Messages.Add(message);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(sujet);
+            //ViewBag.ApplicationUserID = new SelectList(db.ApplicationUsers, "Id", "Email", message.ApplicationUserID);
+            ViewBag.SujetID = new SelectList(db.Sujets, "SujetID", "SubjectTitle", message.SujetID);
+            return View(message);
         }
 
-        // GET: ForumSubject/Edit/5
+        // GET: Messages/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Sujet sujet = db.Sujets.Find(id);
-            if (sujet == null)
+            Message message = db.Messages.Find(id);
+            if (message == null)
             {
                 return HttpNotFound();
             }
-            return View(sujet);
+            //ViewBag.ApplicationUserID = new SelectList(db.ApplicationUsers, "Id", "Email", message.ApplicationUserID);
+            ViewBag.SujetID = new SelectList(db.Sujets, "SujetID", "SubjectTitle", message.SujetID);
+            return View(message);
         }
 
-        // POST: ForumSubject/Edit/5
+        // POST: Messages/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "SujetID,SubjectTitle,SubjectBody")] Sujet sujet)
+        public ActionResult Edit([Bind(Include = "MessageID,ApplicationUserID,MessageBody,SujetID")] Message message)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(sujet).State = EntityState.Modified;
+                db.Entry(message).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(sujet);
+            //ViewBag.ApplicationUserID = new SelectList(db.ApplicationUsers, "Id", "Email", message.ApplicationUserID);
+            ViewBag.SujetID = new SelectList(db.Sujets, "SujetID", "SubjectTitle", message.SujetID);
+            return View(message);
         }
 
-        // GET: ForumSubject/Delete/5
+        // GET: Messages/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Sujet sujet = db.Sujets.Find(id);
-            if (sujet == null)
+            Message message = db.Messages.Find(id);
+            if (message == null)
             {
                 return HttpNotFound();
             }
-            return View(sujet);
+            return View(message);
         }
 
-        // POST: ForumSubject/Delete/5
+        // POST: Messages/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Sujet sujet = db.Sujets.Find(id);
-            db.Sujets.Remove(sujet);
+            Message message = db.Messages.Find(id);
+            db.Messages.Remove(message);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
