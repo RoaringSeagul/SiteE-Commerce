@@ -200,13 +200,14 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
-    <Compile Include="Controllers\ForumSubjectController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LegalController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <None Include="Controllers\PanierController.cs.bak" />
+    <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\PanierController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
+    <Compile Include="Controllers\SujetsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -306,11 +307,16 @@
     <Content Include="Views\Checkout\AddressAndPayment.cshtml" />
     <Content Include="Views\Checkout\Complete.cshtml" />
     <Content Include="Views\Panier\_CartSummary.cshtml" />
-    <Content Include="Views\ForumSubject\Create.cshtml" />
-    <Content Include="Views\ForumSubject\Delete.cshtml" />
-    <Content Include="Views\ForumSubject\Details.cshtml" />
-    <Content Include="Views\ForumSubject\Edit.cshtml" />
-    <Content Include="Views\ForumSubject\Index.cshtml" />
+    <Content Include="Views\Sujets\Create.cshtml" />
+    <Content Include="Views\Sujets\Delete.cshtml" />
+    <Content Include="Views\Sujets\Details.cshtml" />
+    <Content Include="Views\Sujets\Edit.cshtml" />
+    <Content Include="Views\Sujets\Index.cshtml" />
+    <Content Include="Views\Messages\Create.cshtml" />
+    <Content Include="Views\Messages\Delete.cshtml" />
+    <Content Include="Views\Messages\Details.cshtml" />
+    <Content Include="Views\Messages\Edit.cshtml" />
+    <Content Include="Views\Messages\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
