@@ -176,5 +176,158 @@ namespace GrosBrasInc {
                 return ResourceManager.GetString("Forum-Subject_SubjectTitle", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        public static string Order_Address {
+            get {
+                return ResourceManager.GetString("Order_Address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to City.
+        /// </summary>
+        public static string Order_City {
+            get {
+                return ResourceManager.GetString("Order_City", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Country.
+        /// </summary>
+        public static string Order_Country {
+            get {
+                return ResourceManager.GetString("Order_Country", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string Order_Email {
+            get {
+                return ResourceManager.GetString("Order_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to First name.
+        /// </summary>
+        public static string Order_FirstName {
+            get {
+                return ResourceManager.GetString("Order_FirstName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last name.
+        /// </summary>
+        public static string Order_LastName {
+            get {
+                return ResourceManager.GetString("Order_LastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone.
+        /// </summary>
+        public static string Order_Phone {
+            get {
+                return ResourceManager.GetString("Order_Phone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Postal Code.
+        /// </summary>
+        public static string Order_PostalCode {
+            get {
+                return ResourceManager.GetString("Order_PostalCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to State.
+        /// </summary>
+        public static string Order_State {
+            get {
+                return ResourceManager.GetString("Order_State", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total.
+        /// </summary>
+        public static string Order_Total {
+            get {
+                return ResourceManager.GetString("Order_Total", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username.
+        /// </summary>
+        public static string Order_Username {
+            get {
+                return ResourceManager.GetString("Order_Username", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Article.
+        /// </summary>
+        public static string OrderDetails_Article {
+            get {
+                return ResourceManager.GetString("OrderDetails_Article", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantity.
+        /// </summary>
+        public static string OrderDetails_Quantity {
+            get {
+                return ResourceManager.GetString("OrderDetails_Quantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unit price.
+        /// </summary>
+        public static string OrderDetails_UnitPrice {
+            get {
+                return ResourceManager.GetString("OrderDetails_UnitPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Article.
+        /// </summary>
+        public static string Panier_Article {
+            get {
+                return ResourceManager.GetString("Panier_Article", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Count.
+        /// </summary>
+        public static string Panier_Count {
+            get {
+                return ResourceManager.GetString("Panier_Count", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date created.
+        /// </summary>
+        public static string Panier_DateCreated {
+            get {
+                return ResourceManager.GetString("Panier_DateCreated", resourceCulture);
+            }
+        }
     }
 }

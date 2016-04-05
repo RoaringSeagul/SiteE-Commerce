@@ -156,4 +156,55 @@
   <data name="Forum-Subject_SubjectBody" xml:space="preserve">
     <value>Corps du sujet</value>
   </data>
+  <data name="Order_Username" xml:space="preserve">
+    <value>Nom d'usager</value>
+  </data>
+  <data name="Order_FirstName" xml:space="preserve">
+    <value>Prénom</value>
+  </data>
+  <data name="Order_LastName" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="Order_Address" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="Order_City" xml:space="preserve">
+    <value>Ville</value>
+  </data>
+  <data name="Order_State" xml:space="preserve">
+    <value>Province</value>
+  </data>
+  <data name="Order_PostalCode" xml:space="preserve">
+    <value>Code postal</value>
+  </data>
+  <data name="Order_Country" xml:space="preserve">
+    <value>Pays</value>
+  </data>
+  <data name="Order_Phone" xml:space="preserve">
+    <value>Téléphone</value>
+  </data>
+  <data name="Order_Email" xml:space="preserve">
+    <value>Courriel</value>
+  </data>
+  <data name="Order_Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="OrderDetails_Quantity" xml:space="preserve">
+    <value>Quantité</value>
+  </data>
+  <data name="OrderDetails_UnitPrice" xml:space="preserve">
+    <value>Prix unitaire</value>
+  </data>
+  <data name="OrderDetails_Article" xml:space="preserve">
+    <value>Article</value>
+  </data>
+  <data name="Panier_Count" xml:space="preserve">
+    <value>Compte</value>
+  </data>
+  <data name="Panier_DateCreated" xml:space="preserve">
+    <value>Date de création</value>
+  </data>
+  <data name="Panier_Article" xml:space="preserve">
+    <value>Article</value>
+  </data>
 </root>
