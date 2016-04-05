@@ -40,6 +40,8 @@ namespace GrosBrasInc.Models
         public virtual DbSet<Commande> Commandes { get; set; }
         public virtual DbSet<Article> Articles { get; set; }
         public virtual DbSet<Categorie> Categories { get; set; }
+        public virtual DbSet<Sujet> Sujets { get; set; }
+        public virtual DbSet<Message> Messages { get; set; }
 
         internal void SaveChanges(ApplicationDbContext context)
         {
@@ -67,7 +69,5 @@ namespace GrosBrasInc.Models
                 ); // Add the original exception as the innerException
             }
         }
-
-        public System.Data.Entity.DbSet<GrosBrasInc.Models.Sujet> Sujets { get; set; }
     }
 }

@@ -12,15 +12,15 @@ namespace GrosBrasInc.Models
         [ScaffoldColumn(false)]
         [Key]
         public int ArticleID { get; set; }
-        [Display(ResourceType = typeof(GrosBrasInc.Ressource), Name = "Article_NomArticle")]
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Article_NomArticle")]
         public string NomArticle { get; set; }
         public string Description { get; set; }
-        [Display(ResourceType = typeof(GrosBrasInc.Ressource), Name = "Article_Prix")]
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Article_Prix")]
         [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = true)]
         public float Prix { get; set; }
         [ScaffoldColumn(false)]
         public int CategorieID { get; set; }
-        [Display(ResourceType = typeof(GrosBrasInc.Ressource), Name = "Article_Categorie")]
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Article_Categorie")]
         public virtual Categorie Categorie { get; set; }
         [ScaffoldColumn(false)]
         public string ImageNom { get; set; }

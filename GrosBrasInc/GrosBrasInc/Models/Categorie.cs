@@ -11,7 +11,7 @@ namespace GrosBrasInc.Models
         [Key]
         [ScaffoldColumn(false)]
         public int CategorieID { get; set; }
-        [Display(ResourceType = typeof(GrosBrasInc.Ressource), Name = "Categorie_NomCategorie")]
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Categorie_NomCategorie")]
         public string NomCategorie { get; set; }
     }
 }

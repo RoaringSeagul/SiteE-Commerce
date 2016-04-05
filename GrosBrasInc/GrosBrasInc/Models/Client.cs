@@ -16,9 +16,9 @@ namespace GrosBrasInc.Models
         public virtual string ApplicationUserID { get; set; }
         [ForeignKey("ApplicationUserID")]
         public virtual ApplicationUser User { get; set; }
-        [Display(ResourceType = typeof(GrosBrasInc.Ressource), Name = "Client_CardNumber")]
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Client_CardNumber")]
         public string CardNumber { get; set; }
-        [Display(ResourceType = typeof(GrosBrasInc.Ressource), Name = "Client_PaypalUrl")]
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Client_PaypalUrl")]
         public string PaypalUrl { get; set; }
     }
 }

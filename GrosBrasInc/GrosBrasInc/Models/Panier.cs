@@ -15,11 +15,11 @@ namespace GrosBrasInc.Models
         public string KeyPanier { get; set; }
         [ScaffoldColumn(false)]
         public int ArticleID { get; set; }
-        [Display(ResourceType = typeof(GrosBrasInc.Ressource), Name = "Panier_Count")]
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Panier_Count")]
         public int Count { get; set; }
-        [Display(ResourceType = typeof(GrosBrasInc.Ressource), Name = "Panier_DateCreated")]
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Panier_DateCreated")]
         public DateTime DateCreated { get; set; }
-        [Display(ResourceType = typeof(GrosBrasInc.Ressource), Name = "Panier_Article")]
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Panier_Article")]
         public virtual Article Article { get; set; }
     }
 }

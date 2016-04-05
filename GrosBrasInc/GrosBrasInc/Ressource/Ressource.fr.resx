@@ -144,16 +144,16 @@
   <data name="Commande_Total" xml:space="preserve">
     <value>Totale</value>
   </data>
-  <data name="Forum-Message_Author" xml:space="preserve">
+  <data name="Forum_Message_Author" xml:space="preserve">
     <value>Autheur</value>
   </data>
-  <data name="Forum-Message_MessageBody" xml:space="preserve">
+  <data name="Forum_Message_MessageBody" xml:space="preserve">
     <value>Corps du message</value>
   </data>
-  <data name="Forum-Subject_SubjectTitle" xml:space="preserve">
+  <data name="Forum_Subject_SubjectTitle" xml:space="preserve">
     <value>Titre du sujet</value>
   </data>
-  <data name="Forum-Subject_SubjectBody" xml:space="preserve">
+  <data name="Forum_Subject_SubjectBody" xml:space="preserve">
     <value>Corps du sujet</value>
   </data>
   <data name="Order_Username" xml:space="preserve">
@@ -206,5 +206,26 @@
   </data>
   <data name="Panier_Article" xml:space="preserve">
     <value>Article</value>
+  </data>
+  <data name="Views_Layout_Home" xml:space="preserve">
+    <value>Acceuil</value>
+  </data>
+  <data name="Views_Layout_About" xml:space="preserve">
+    <value>À propos</value>
+  </data>
+  <data name="Views_Layout_Contact" xml:space="preserve">
+    <value>Contactez-nous</value>
+  </data>
+  <data name="Views_Layout_Articles" xml:space="preserve">
+    <value>Articles</value>
+  </data>
+  <data name="Commande_Client" xml:space="preserve">
+    <value>Clients</value>
+  </data>
+  <data name="Forum_Message_ParentSujet" xml:space="preserve">
+    <value>Sujet parent</value>
+  </data>
+  <data name="Order_OrderDate" xml:space="preserve">
+    <value>Date de commande</value>
   </data>
 </root>

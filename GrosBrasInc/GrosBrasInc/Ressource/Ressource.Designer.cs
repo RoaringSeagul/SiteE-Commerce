@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GrosBrasInc {
+namespace GrosBrasInc.Ressource {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace GrosBrasInc {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GrosBrasInc.Ressource", typeof(Ressource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GrosBrasInc.Ressource.Ressource", typeof(Ressource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -115,6 +115,15 @@ namespace GrosBrasInc {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clients.
+        /// </summary>
+        public static string Commande_Client {
+            get {
+                return ResourceManager.GetString("Commande_Client", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Subtotal.
         /// </summary>
         public static string Commande_SousTotal {
@@ -146,7 +155,7 @@ namespace GrosBrasInc {
         /// </summary>
         public static string Forum_Message_Author {
             get {
-                return ResourceManager.GetString("Forum-Message_Author", resourceCulture);
+                return ResourceManager.GetString("Forum_Message_Author", resourceCulture);
             }
         }
         
@@ -155,7 +164,16 @@ namespace GrosBrasInc {
         /// </summary>
         public static string Forum_Message_MessageBody {
             get {
-                return ResourceManager.GetString("Forum-Message_MessageBody", resourceCulture);
+                return ResourceManager.GetString("Forum_Message_MessageBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parent subject.
+        /// </summary>
+        public static string Forum_Message_ParentSujet {
+            get {
+                return ResourceManager.GetString("Forum_Message_ParentSujet", resourceCulture);
             }
         }
         
@@ -164,7 +182,7 @@ namespace GrosBrasInc {
         /// </summary>
         public static string Forum_Subject_SubjectBody {
             get {
-                return ResourceManager.GetString("Forum-Subject_SubjectBody", resourceCulture);
+                return ResourceManager.GetString("Forum_Subject_SubjectBody", resourceCulture);
             }
         }
         
@@ -173,7 +191,7 @@ namespace GrosBrasInc {
         /// </summary>
         public static string Forum_Subject_SubjectTitle {
             get {
-                return ResourceManager.GetString("Forum-Subject_SubjectTitle", resourceCulture);
+                return ResourceManager.GetString("Forum_Subject_SubjectTitle", resourceCulture);
             }
         }
         
@@ -228,6 +246,15 @@ namespace GrosBrasInc {
         public static string Order_LastName {
             get {
                 return ResourceManager.GetString("Order_LastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order date.
+        /// </summary>
+        public static string Order_OrderDate {
+            get {
+                return ResourceManager.GetString("Order_OrderDate", resourceCulture);
             }
         }
         
@@ -327,6 +354,42 @@ namespace GrosBrasInc {
         public static string Panier_DateCreated {
             get {
                 return ResourceManager.GetString("Panier_DateCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About us.
+        /// </summary>
+        public static string Views_Layout_About {
+            get {
+                return ResourceManager.GetString("Views_Layout_About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Articles.
+        /// </summary>
+        public static string Views_Layout_Articles {
+            get {
+                return ResourceManager.GetString("Views_Layout_Articles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact us.
+        /// </summary>
+        public static string Views_Layout_Contact {
+            get {
+                return ResourceManager.GetString("Views_Layout_Contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home.
+        /// </summary>
+        public static string Views_Layout_Home {
+            get {
+                return ResourceManager.GetString("Views_Layout_Home", resourceCulture);
             }
         }
     }

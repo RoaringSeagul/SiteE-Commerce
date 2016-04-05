@@ -290,10 +290,15 @@
     <Compile Include="Models\Panier.cs" />
     <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ressource.Designer.cs">
+    <Compile Include="Ressource\Ressource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Ressource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Ressource\Ressource.fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ressource.fr.resx</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\ShoppingCartRemoveViewModel.cs" />
@@ -437,8 +442,11 @@
     <EmbeddedResource Include="Migrations\201603312239030_UPDATERestrictions.resx">
       <DependentUpon>201603312239030_UPDATERestrictions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ressource.fr.resx" />
-    <EmbeddedResource Include="Ressource.resx">
+    <EmbeddedResource Include="Ressource\Ressource.fr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Ressource.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ressource\Ressource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Ressource.Designer.cs</LastGenOutput>
     </EmbeddedResource>

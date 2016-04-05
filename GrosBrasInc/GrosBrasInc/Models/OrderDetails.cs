@@ -15,12 +15,12 @@ namespace GrosBrasInc.Models
         public int OrderId { get; set; }
         [ScaffoldColumn(false)]
         public int ArticleId { get; set; }
-        [Display(ResourceType = typeof(GrosBrasInc.Ressource), Name = "OrderDetails_Quantity")]
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "OrderDetails_Quantity")]
         public int Quantity { get; set; }
         [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = true)]
-        [Display(ResourceType = typeof(GrosBrasInc.Ressource), Name = "OrderDetails_UnitPrice")]
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "OrderDetails_UnitPrice")]
         public float UnitPrice { get; set; }
-        [Display(ResourceType = typeof(GrosBrasInc.Ressource), Name = "OrderDetails_Article")]
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "OrderDetails_Article")]
         public virtual Article Article { get; set; }
         public virtual Order Order { get; set; }
     }
