@@ -228,4 +228,37 @@
   <data name="Order_OrderDate" xml:space="preserve">
     <value>Date de commande</value>
   </data>
+  <data name="Global_Edit" xml:space="preserve">
+    <value>Modifier</value>
+  </data>
+  <data name="Global_Delete" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="Global_Add" xml:space="preserve">
+    <value>Ajouter</value>
+  </data>
+  <data name="Global_CreateNew" xml:space="preserve">
+    <value>Créer un nouveau</value>
+  </data>
+  <data name="Global_Details" xml:space="preserve">
+    <value>Détails</value>
+  </data>
+  <data name="Views_Layout_Forum" xml:space="preserve">
+    <value>Forum</value>
+  </data>
+  <data name="Views_Layout_Cart" xml:space="preserve">
+    <value>Panier</value>
+  </data>
+  <data name="Views_LoginPartial_Register" xml:space="preserve">
+    <value>S'enregistrer</value>
+  </data>
+  <data name="Views_LoginPartial_LogIn" xml:space="preserve">
+    <value>Se connecter</value>
+  </data>
+  <data name="Views_LoginPartial_LogOff" xml:space="preserve">
+    <value>Se déconnecter</value>
+  </data>
+  <data name="Views_LoginPartial_Hello" xml:space="preserve">
+    <value>Bonjour</value>
+  </data>
 </root>

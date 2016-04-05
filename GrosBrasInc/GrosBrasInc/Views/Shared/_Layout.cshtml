@@ -21,12 +21,20 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Articles", "Index", "Articles")</li>
-                    <li>@Html.ActionLink("Forum", "Index", "Articles")</li>
+                    <li>@Html.ActionLink(GrosBrasInc.Ressource.Ressource.Views_Layout_Home, "Index", "Home")</li>
+                    <li>@Html.ActionLink(GrosBrasInc.Ressource.Ressource.Views_Layout_About, "About", "Home")</li>
+                    <li>@Html.ActionLink(GrosBrasInc.Ressource.Ressource.Views_Layout_Contact, "Contact", "Home")</li>
+                    <li>@Html.ActionLink(GrosBrasInc.Ressource.Ressource.Views_Layout_Articles, "Index", "Articles")</li>
+                    <li>@Html.ActionLink(GrosBrasInc.Ressource.Ressource.Views_Layout_Forum, "Index", "Articles")</li>
                     <li>@Html.Action("_CartSummary", "Panier")</li>
+                    <li> 
+                        <form id="formLang" method="post" role="form" class="form-inline" style="line-height: 50px;"> 
+                            <select id="selectLang" class="form-control" name="lang"> 
+                                <option value="fr-CA" @(Culture == "fr-CA" ? "selected=\"selected\"" : "")>fr</option> 
+                                <option value="en-US" @(Culture == "en-US" ? "selected=\"selected\"" : "")>en</option> 
+                            </select> 
+                        </form> 
+                    </li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -42,6 +50,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/application")
     @RenderSection("scripts", required: false)
 </body>
 </html>

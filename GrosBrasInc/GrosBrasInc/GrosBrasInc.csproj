@@ -274,6 +274,10 @@
     <Compile Include="Migrations\201603312239030_UPDATERestrictions.Designer.cs">
       <DependentUpon>201603312239030_UPDATERestrictions.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604052112512_Update.cs" />
+    <Compile Include="Migrations\201604052112512_Update.Designer.cs">
+      <DependentUpon>201604052112512_Update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Article.cs" />
@@ -295,14 +299,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Ressource.resx</DependentUpon>
     </Compile>
-    <Compile Include="Ressource\Ressource.fr.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Ressource.fr.resx</DependentUpon>
-    </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\ShoppingCartRemoveViewModel.cs" />
     <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
+    <Content Include="Scripts\application.js" />
     <Content Include="Views\Checkout\AddressAndPayment.cshtml" />
     <Content Include="Views\Checkout\Complete.cshtml" />
     <Content Include="Views\Panier\_CartSummary.cshtml" />
@@ -442,10 +442,10 @@
     <EmbeddedResource Include="Migrations\201603312239030_UPDATERestrictions.resx">
       <DependentUpon>201603312239030_UPDATERestrictions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ressource\Ressource.fr.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Ressource.fr.Designer.cs</LastGenOutput>
+    <EmbeddedResource Include="Migrations\201604052112512_Update.resx">
+      <DependentUpon>201604052112512_Update.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ressource\Ressource.fr.resx" />
     <EmbeddedResource Include="Ressource\Ressource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Ressource.Designer.cs</LastGenOutput>

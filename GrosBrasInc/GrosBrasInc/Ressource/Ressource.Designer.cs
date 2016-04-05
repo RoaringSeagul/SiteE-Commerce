@@ -196,6 +196,51 @@ namespace GrosBrasInc.Ressource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        public static string Global_Add {
+            get {
+                return ResourceManager.GetString("Global_Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create New.
+        /// </summary>
+        public static string Global_CreateNew {
+            get {
+                return ResourceManager.GetString("Global_CreateNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string Global_Delete {
+            get {
+                return ResourceManager.GetString("Global_Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        public static string Global_Details {
+            get {
+                return ResourceManager.GetString("Global_Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        public static string Global_Edit {
+            get {
+                return ResourceManager.GetString("Global_Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Address.
         /// </summary>
         public static string Order_Address {
@@ -376,6 +421,15 @@ namespace GrosBrasInc.Ressource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cart.
+        /// </summary>
+        public static string Views_Layout_Cart {
+            get {
+                return ResourceManager.GetString("Views_Layout_Cart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact us.
         /// </summary>
         public static string Views_Layout_Contact {
@@ -385,11 +439,56 @@ namespace GrosBrasInc.Ressource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Forum.
+        /// </summary>
+        public static string Views_Layout_Forum {
+            get {
+                return ResourceManager.GetString("Views_Layout_Forum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         public static string Views_Layout_Home {
             get {
                 return ResourceManager.GetString("Views_Layout_Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hello.
+        /// </summary>
+        public static string Views_LoginPartial_Hello {
+            get {
+                return ResourceManager.GetString("Views_LoginPartial_Hello", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log in.
+        /// </summary>
+        public static string Views_LoginPartial_LogIn {
+            get {
+                return ResourceManager.GetString("Views_LoginPartial_LogIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log off.
+        /// </summary>
+        public static string Views_LoginPartial_LogOff {
+            get {
+                return ResourceManager.GetString("Views_LoginPartial_LogOff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register.
+        /// </summary>
+        public static string Views_LoginPartial_Register {
+            get {
+                return ResourceManager.GetString("Views_LoginPartial_Register", resourceCulture);
             }
         }
     }
