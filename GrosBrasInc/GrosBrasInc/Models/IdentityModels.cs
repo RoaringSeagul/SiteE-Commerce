@@ -67,5 +67,7 @@ namespace GrosBrasInc.Models
                 ); // Add the original exception as the innerException
             }
         }
+
+        public System.Data.Entity.DbSet<GrosBrasInc.Models.Sujet> Sujets { get; set; }
     }
 }

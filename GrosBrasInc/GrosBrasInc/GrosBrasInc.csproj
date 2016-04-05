@@ -200,6 +200,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
+    <Compile Include="Controllers\ForumSubjectController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LegalController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -300,6 +301,11 @@
     <Content Include="Views\Checkout\AddressAndPayment.cshtml" />
     <Content Include="Views\Checkout\Complete.cshtml" />
     <Content Include="Views\Panier\_CartSummary.cshtml" />
+    <Content Include="Views\ForumSubject\Create.cshtml" />
+    <Content Include="Views\ForumSubject\Delete.cshtml" />
+    <Content Include="Views\ForumSubject\Details.cshtml" />
+    <Content Include="Views\ForumSubject\Edit.cshtml" />
+    <Content Include="Views\ForumSubject\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
