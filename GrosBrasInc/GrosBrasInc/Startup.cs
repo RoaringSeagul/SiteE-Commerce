@@ -1,5 +1,7 @@
 ﻿using Microsoft.Owin;
 using Owin;
+using System.Data.Entity;
+using GrosBrasInc.Models;
 
 [assembly: OwinStartupAttribute(typeof(GrosBrasInc.Startup))]
 namespace GrosBrasInc
@@ -9,6 +11,7 @@ namespace GrosBrasInc
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+            Database.SetInitializer(new DropCreateDatabaseAlways<ApplicationDbContext>());
         }
     }
 }
