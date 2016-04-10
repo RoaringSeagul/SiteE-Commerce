@@ -261,4 +261,7 @@
   <data name="Views_LoginPartial_Hello" xml:space="preserve">
     <value>Bonjour</value>
   </data>
+  <data name="View_Voir_Posts" xml:space="preserve">
+    <value>Voir les messages</value>
+  </data>
 </root>

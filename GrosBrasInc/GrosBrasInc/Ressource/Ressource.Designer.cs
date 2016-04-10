@@ -403,6 +403,15 @@ namespace GrosBrasInc.Ressource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to See posts.
+        /// </summary>
+        public static string View_Voir_Posts {
+            get {
+                return ResourceManager.GetString("View_Voir_Posts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About us.
         /// </summary>
         public static string Views_Layout_About {

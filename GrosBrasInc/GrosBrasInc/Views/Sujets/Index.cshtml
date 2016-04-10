@@ -34,7 +34,7 @@
                 @Html.ActionLink("Edit", "Edit", new { id=item.SujetID }) |
                 @Html.ActionLink("Details", "Details", new { id=item.SujetID }) |
                 @Html.ActionLink("Delete", "Delete", new { id=item.SujetID }) |
-                @Html.ActionLink("voir posts", "Index", "Messages", new { id = item.SujetID }, new { @class = "btn btn-info btnMiddle" })
+                @Html.ActionLink(GrosBrasInc.Ressource.Ressource.View_Voir_Posts, "Index", "Messages", new { id = item.SujetID }, new { @class = "btn btn-info btnMiddle" })
             </td>
         </tr>
     }

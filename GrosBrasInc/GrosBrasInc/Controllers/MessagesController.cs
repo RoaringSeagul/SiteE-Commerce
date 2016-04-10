@@ -42,7 +42,7 @@ namespace GrosBrasInc.Controllers
         public ActionResult Create()
         {
             ViewBag.ApplicationUserID = new SelectList(db.Users, "Id", "Email");
-            ViewBag.SujetID = new SelectList(db.Sujets, "SujetID", "SubjectTitle");
+            //ViewBag.SujetID = new SelectList(db.Sujets, "SujetID", "SubjectTitle");
             return View();
         }
 
@@ -51,16 +51,20 @@ namespace GrosBrasInc.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MessageID,ApplicationUserID,MessageBody,SujetID")] Message message)
+        public ActionResult Create([Bind(Include = "MessageID,ApplicationUserID,MessageBody,SujetID")] Message message, int? id)
         {
+            //ViewBag.SujetID = new SelectList(db.Sujets, "SujetID", "SubjectTitle", message.SujetID);
             if (ModelState.IsValid)
             {
+                ApplicationUser CurrentUser = db.Users.Where(m => m.UserName == User.Identity.Name).FirstOrDefault();
+                message.Author = CurrentUser;
+                message.ApplicationUserID = message.Author.Id;
+                message.SujetID = id.Value;
                 db.Messages.Add(message);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                db.SaveChanges(db);
+                return RedirectToAction("Index", new { id = id.Value });
             }
             ViewBag.ApplicationUserID = new SelectList(db.Users, "Id", "Email", message.ApplicationUserID);
-            ViewBag.SujetID = new SelectList(db.Sujets, "SujetID", "SubjectTitle", message.SujetID);
 
             return View(message);
         }
