@@ -6,16 +6,22 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+@if (User.Identity.IsAuthenticated)
+{
+    using (var db = new GrosBrasInc.Models.ApplicationDbContext())
+    {
+        string url = Request.RawUrl;
+        string[] asUrl = url.Split('/');
+        int CurrentPostId = int.Parse(asUrl[asUrl.Count() - 1]);
+        <p>
+            @Html.ActionLink(GrosBrasInc.Ressource.Ressource.Global_CreateNew, "Create", new { id = CurrentPostId })
+        </p>
+    }
+}
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Author.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ParentSujet.SubjectTitle)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.MessageBody)
@@ -23,23 +29,24 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Author.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ParentSujet.SubjectTitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MessageBody)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MessageID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MessageID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MessageID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MessageBody)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MessageID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MessageID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MessageID })
+            </td>
+        </tr>
+    }
 
 </table>
+<p>
+    @Html.ActionLink(GrosBrasInc.Ressource.Ressource.Views_Layout_Forum, "Index", "Sujets")
+</p>

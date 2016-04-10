@@ -17,11 +17,11 @@ namespace GrosBrasInc.Migrations
 
         protected override void Seed(GrosBrasInc.Models.ApplicationDbContext context)
         {
-            //AddRoles(context);
-            //AddUser(context);
-            //AddUserRole(context);
-            //AddArticlesCategorie(context);
-            //AddArticles(context);
+            AddRoles(context);
+            AddUser(context);
+            AddUserRole(context);
+            AddArticlesCategorie(context);
+            AddArticles(context);
         }
 
         private void AddArticlesCategorie(ApplicationDbContext context)
