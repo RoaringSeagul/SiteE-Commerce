@@ -1,9 +1,5 @@
 ﻿@model IEnumerable<GrosBrasInc.Models.Sujet>
 
-@{
-    Layout = null;
-}
-
 <!DOCTYPE html>
 
 <html>
@@ -37,9 +33,8 @@
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id=item.SujetID }) |
                 @Html.ActionLink("Details", "Details", new { id=item.SujetID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.SujetID })
-                @*@Html.ActionLink(CS_SKINS_ASP.Views.Sujets.ResourceSujet.VoirPost, "Index", "Posts", new { id = item.Id }, new { id = item.Id })*@
-                @Html.ActionLink(GrosBrasInc.Views., "Index", "Posts", new { id = item.Id }, new { id = item.Id })
+                @Html.ActionLink("Delete", "Delete", new { id=item.SujetID }) |
+                @Html.ActionLink("voir posts", "Index", "Messages", new { id = item.SujetID }, new { @class = "btn btn-info btnMiddle" })
             </td>
         </tr>
     }

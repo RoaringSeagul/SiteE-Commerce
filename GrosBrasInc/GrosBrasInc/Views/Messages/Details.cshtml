@@ -1,50 +1,42 @@
 ﻿@model GrosBrasInc.Models.Message
 
 @{
-    Layout = null;
+    ViewBag.Title = "Details";
 }
 
-<!DOCTYPE html>
+<h2>Details</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
-</head>
-<body>
-    <div>
-        <h4>Message</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Author.Email)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Author.Email)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.ParentSujet.SubjectTitle)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.ParentSujet.SubjectTitle)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.MessageBody)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.MessageBody)
-            </dd>
-    
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.MessageID }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-</body>
-</html>
+<div>
+    <h4>Message</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Author.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ParentSujet.SubjectTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParentSujet.SubjectTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MessageBody)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MessageBody)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MessageID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

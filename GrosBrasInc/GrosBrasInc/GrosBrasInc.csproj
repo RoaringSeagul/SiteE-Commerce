@@ -317,14 +317,14 @@
     <Content Include="Views\Sujets\Details.cshtml" />
     <Content Include="Views\Sujets\Edit.cshtml" />
     <Content Include="Views\Sujets\Index.cshtml" />
+    <Content Include="Views\OrderDetails\Create.cshtml" />
+    <Content Include="Views\OrderDetails\Details.cshtml" />
+    <Content Include="Views\OrderDetails\Index.cshtml" />
+    <Content Include="Views\Messages\Index.cshtml" />
     <Content Include="Views\Messages\Create.cshtml" />
     <Content Include="Views\Messages\Delete.cshtml" />
     <Content Include="Views\Messages\Details.cshtml" />
     <Content Include="Views\Messages\Edit.cshtml" />
-    <Content Include="Views\Messages\Index.cshtml" />
-    <Content Include="Views\OrderDetails\Create.cshtml" />
-    <Content Include="Views\OrderDetails\Details.cshtml" />
-    <Content Include="Views\OrderDetails\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />

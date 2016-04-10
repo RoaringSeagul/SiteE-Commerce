@@ -15,9 +15,11 @@ namespace GrosBrasInc.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Messages
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
-            var messages = db.Messages.Include(m => m.Author).Include(m => m.ParentSujet);
+            IQueryable<Message> messages = db.Messages.Where(m => m.SujetID == id);
+
+            //var messages = db.Messages.Include(m => m.Author).Include(m => m.ParentSujet);
             return View(messages.ToList());
         }
 
@@ -39,7 +41,7 @@ namespace GrosBrasInc.Controllers
         // GET: Messages/Create
         public ActionResult Create()
         {
-            //ViewBag.ApplicationUserID = new SelectList(db.ApplicationUsers, "Id", "Email");
+            ViewBag.ApplicationUserID = new SelectList(db.Users, "Id", "Email");
             ViewBag.SujetID = new SelectList(db.Sujets, "SujetID", "SubjectTitle");
             return View();
         }
@@ -57,9 +59,9 @@ namespace GrosBrasInc.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            //ViewBag.ApplicationUserID = new SelectList(db.ApplicationUsers, "Id", "Email", message.ApplicationUserID);
+            ViewBag.ApplicationUserID = new SelectList(db.Users, "Id", "Email", message.ApplicationUserID);
             ViewBag.SujetID = new SelectList(db.Sujets, "SujetID", "SubjectTitle", message.SujetID);
+
             return View(message);
         }
 
