@@ -13,5 +13,5 @@
 11. [ ] Permettre à un utilisateur de chercher un produit.
 12. [X] Lien vers les réseaux sociaux.
 13. [ ] ~~Calculer automatiquement les frais de transport avec les services appropriés.~~
-14. [X] Ergonomie et esthétique dans l'ensemble du site Internet.
+14. [ ] Ergonomie et esthétique dans l'ensemble du site Internet.
 15. [X] Un document Microsoft Project qui fait état de l’avancement du projet lors de la date de remise.
