@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -149,6 +150,7 @@ namespace GrosBrasInc.Models
         {
             float orderTotal = 0;
             var cartItems = GetCartItems();
+            var user = new ApplicationUserManager(new UserStore<ApplicationUser>(db));
             // Iterate over the items in the cart,
             // adding the order details for each
             foreach (var item in cartItems)
@@ -158,7 +160,8 @@ namespace GrosBrasInc.Models
                     ArticleId = item.ArticleID,
                     OrderId = order.OrderId,
                     UnitPrice = item.Article.Prix,
-                    Quantity = item.Count
+                    Quantity = item.Count,
+                    Client = db.Users.Where(o => o.UserName == HttpContext.Current.User.Identity.Name).FirstOrDefault()
                 };
                 // Set the order total of the shopping cart
                 orderTotal += (item.Count * item.Article.Prix);

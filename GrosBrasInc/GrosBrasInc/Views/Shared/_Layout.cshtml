@@ -21,28 +21,12 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-<<<<<<< HEAD
                     <li>@Html.ActionLink(GrosBrasInc.Ressource.Ressource.Views_Layout_Home, "Index", "Home")</li>
                     <li>@Html.ActionLink(GrosBrasInc.Ressource.Ressource.Views_Layout_About, "About", "Home")</li>
                     <li>@Html.ActionLink(GrosBrasInc.Ressource.Ressource.Views_Layout_Contact, "Contact", "Home")</li>
                     <li>@Html.ActionLink(GrosBrasInc.Ressource.Ressource.Views_Layout_Articles, "Index", "Articles")</li>
                     <li>@Html.ActionLink(GrosBrasInc.Ressource.Ressource.Views_Layout_Forum, "Index", "Articles")</li>
-=======
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Articles", "Index", "Articles")</li>
-                    <li>@Html.ActionLink("Forum", "Index", "Sujets")</li>
->>>>>>> 3aceae98ea8d3ece90eaf015474ff6c815f10427
                     <li>@Html.Action("_CartSummary", "Panier")</li>
-                    <li> 
-                        <form id="formLang" method="post" role="form" class="form-inline" style="line-height: 50px;"> 
-                            <select id="selectLang" class="form-control" name="lang"> 
-                                <option value="fr-CA" @(Culture == "fr-CA" ? "selected=\"selected\"" : "")>fr</option> 
-                                <option value="en-US" @(Culture == "en-US" ? "selected=\"selected\"" : "")>en</option> 
-                            </select> 
-                        </form> 
-                    </li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -52,7 +36,53 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Gros Bras Inc.</p>
+            <div class="row">
+                <div class="col-lg-3">
+                    <p>&copy; @DateTime.Now.Year - Gros Bras Inc.</p>
+                </div>
+                <div class="col-lg-8"></div>
+                <div class="col-lg-1">
+                    <form id="formLang" method="post" role="form" class="form-inline" style="line-height: 50px;">
+                        <select id="selectLang" class="form-control" name="lang">
+                            <option value="fr-CA" @(Culture == "fr-CA" ? "selected=\"selected\"" : "")>fr</option>
+                            <option value="en-US" @(Culture == "en-US" ? "selected=\"selected\"" : "")>en</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="row">
+                    <div class="col-lg-11 col-lg-offset-1">
+                        <a href="https://twitter.com/GrosBrasInc" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @@GrosBrasInc</a>
+                        <script>
+                            !function (d, s, id) {
+                                var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                                if (!d.getElementById(id)) {
+                                    js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js';
+                                    fjs.parentNode.insertBefore(js, fjs);
+                                }
+                            }
+                            (document, 'script', 'twitter-wjs');
+                        </script>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-11 col-lg-offset-1">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div id="fb-root"></div>
+                                    <script>
+                                        (function (d, s, id) {
+                                            var js, fjs = d.getElementsByTagName(s)[0];
+                                            if (d.getElementById(id)) return;
+                                            js = d.createElement(s); js.id = id;
+                                            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+                                            fjs.parentNode.insertBefore(js, fjs);
+                                        }(document, 'script', 'facebook-jssdk'));
+                                    </script>
+                                        
+                                    <div class="fb-like" data-href="https://www.facebook.com/grosbrasinc/" data-width="200" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                                </div>
+                            </div>
+                    </div>
+            </div>
         </footer>
     </div>
 

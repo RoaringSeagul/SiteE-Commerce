@@ -205,6 +205,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <None Include="Controllers\PanierController.cs.bak" />
     <Compile Include="Controllers\MessagesController.cs" />
+    <Compile Include="Controllers\OrderDetailsController.cs" />
     <Compile Include="Controllers\PanierController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Controllers\SujetsController.cs" />
@@ -279,6 +280,10 @@
     <Compile Include="Migrations\201604052112512_Update.Designer.cs">
       <DependentUpon>201604052112512_Update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604101554190_ADDOrderStateINOrderDetails.cs" />
+    <Compile Include="Migrations\201604101554190_ADDOrderStateINOrderDetails.Designer.cs">
+      <DependentUpon>201604101554190_ADDOrderStateINOrderDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Article.cs" />
@@ -317,6 +322,9 @@
     <Content Include="Views\Messages\Details.cshtml" />
     <Content Include="Views\Messages\Edit.cshtml" />
     <Content Include="Views\Messages\Index.cshtml" />
+    <Content Include="Views\OrderDetails\Create.cshtml" />
+    <Content Include="Views\OrderDetails\Details.cshtml" />
+    <Content Include="Views\OrderDetails\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -450,6 +458,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604052112512_Update.resx">
       <DependentUpon>201604052112512_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604101554190_ADDOrderStateINOrderDetails.resx">
+      <DependentUpon>201604101554190_ADDOrderStateINOrderDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ressource\Ressource.fr.resx" />
     <EmbeddedResource Include="Ressource\Ressource.resx">
