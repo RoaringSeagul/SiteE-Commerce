@@ -284,6 +284,10 @@
     <Compile Include="Migrations\201604101554190_ADDOrderStateINOrderDetails.Designer.cs">
       <DependentUpon>201604101554190_ADDOrderStateINOrderDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604111557093_Recommandation.cs" />
+    <Compile Include="Migrations\201604111557093_Recommandation.Designer.cs">
+      <DependentUpon>201604111557093_Recommandation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Article.cs" />
@@ -310,11 +314,11 @@
     <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
     <Content Include="Media\Images\car_1.jpg" />
     <Content Include="Media\Images\car_2.jpg" />
-    <Content Include="Media\Images\car_3.jpeg" />
-    <Content Include="Media\Images\car_4.png" />
-    <Content Include="Media\Images\car_5.jpg" />
+    <Content Include="Media\Images\car_3.jpg" />
+    <Content Include="Media\Images\car_4.jpg" />
     <Content Include="Media\Images\facebook.png" />
     <Content Include="Media\Images\Logo.png" />
+    <Content Include="Media\Images\thumbsup.png" />
     <Content Include="Media\Images\twitter.png" />
     <Content Include="Media\Images\YouTube.png" />
     <Content Include="Scripts\application.js" />
@@ -334,6 +338,7 @@
     <Content Include="Views\Messages\Delete.cshtml" />
     <Content Include="Views\Messages\Details.cshtml" />
     <Content Include="Views\Messages\Edit.cshtml" />
+    <Content Include="Views\Home\_ListeRecommendation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -470,6 +475,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604101554190_ADDOrderStateINOrderDetails.resx">
       <DependentUpon>201604101554190_ADDOrderStateINOrderDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604111557093_Recommandation.resx">
+      <DependentUpon>201604111557093_Recommandation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ressource\Ressource.fr.resx" />
     <EmbeddedResource Include="Ressource\Ressource.resx">

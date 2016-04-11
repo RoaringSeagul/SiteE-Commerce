@@ -241,6 +241,33 @@ namespace GrosBrasInc.Ressource {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Check our inventory of supplements and training tools.
+        /// </summary>
+        public static string Home_check_articles {
+            get {
+                return ResourceManager.GetString("Home_check_articles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Discuss on our forum and get to know other bodubuilders.
+        /// </summary>
+        public static string Home_check_forum {
+            get {
+                return ResourceManager.GetString("Home_check_forum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à GrosBrasInc.
+        /// </summary>
+        public static string Home_Index_GrosBrasInc {
+            get {
+                return ResourceManager.GetString("Home_Index_GrosBrasInc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Support us.
         /// </summary>
         public static string Home_Index_Support {
@@ -250,11 +277,20 @@ namespace GrosBrasInc.Ressource {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Welcome to GrosBrasInc.
+        ///   Recherche une chaîne localisée semblable à Favorite products.
         /// </summary>
-        public static string Home_Index_Welcome {
+        public static string Home_Recommandations {
             get {
-                return ResourceManager.GetString("Home_Index_Welcome", resourceCulture);
+                return ResourceManager.GetString("Home_Recommandations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Visit us at our training center at Montreal.
+        /// </summary>
+        public static string Home_visit_us {
+            get {
+                return ResourceManager.GetString("Home_visit_us", resourceCulture);
             }
         }
         
@@ -516,6 +552,24 @@ namespace GrosBrasInc.Ressource {
         public static string Views_LoginPartial_Register {
             get {
                 return ResourceManager.GetString("Views_LoginPartial_Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Description.
+        /// </summary>
+        public static string Views_Recommandation_Description {
+            get {
+                return ResourceManager.GetString("Views_Recommandation_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Product.
+        /// </summary>
+        public static string Views_Recommandation_Product {
+            get {
+                return ResourceManager.GetString("Views_Recommandation_Product", resourceCulture);
             }
         }
     }

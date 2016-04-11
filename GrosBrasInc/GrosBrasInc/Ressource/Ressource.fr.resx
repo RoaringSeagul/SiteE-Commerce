@@ -267,7 +267,25 @@
   <data name="Home_Index_Support" xml:space="preserve">
     <value>Supportez nous</value>
   </data>
-  <data name="Home_Index_Welcome" xml:space="preserve">
-    <value>Bienvenue chez GrosBrasInc</value>
+  <data name="Home_Index_GrosBrasInc" xml:space="preserve">
+    <value>GrosBrasInc</value>
+  </data>
+  <data name="Views_Recommandation_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Views_Recommandation_Product" xml:space="preserve">
+    <value>Produit</value>
+  </data>
+  <data name="Home_check_articles" xml:space="preserve">
+    <value>Consultez notre inventaire de suppléments et d'outils d'entraînement</value>
+  </data>
+  <data name="Home_Recommandations" xml:space="preserve">
+    <value>Produits favoris</value>
+  </data>
+  <data name="Home_visit_us" xml:space="preserve">
+    <value>Visitez-nous à notre centre d'entraînement à Montréal</value>
+  </data>
+  <data name="Home_check_forum" xml:space="preserve">
+    <value>Discutez sur notre forum et faîtes connaissance avec d'autres culturistes</value>
   </data>
 </root>

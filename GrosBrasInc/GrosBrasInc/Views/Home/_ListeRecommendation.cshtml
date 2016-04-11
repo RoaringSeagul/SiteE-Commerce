@@ -1,0 +1,29 @@
+﻿@model IEnumerable<GrosBrasInc.Models.Article>
+
+@{ 
+    Layout = null;
+}
+
+<table class="table">
+    <tr>
+        <th></th>
+        <th>@GrosBrasInc.Ressource.Ressource.Views_Recommandation_Product</th>
+        <th>@GrosBrasInc.Ressource.Ressource.Views_Recommandation_Description</th>
+        <th>@GrosBrasInc.Ressource.Ressource.Article_Prix</th>
+    </tr>
+    @foreach (var a in Model)
+    {
+        <tr>
+            <td>
+                @{
+                    string src;
+                    src = "data:" + a.ImageType + ";base64," + Convert.ToBase64String(a.ImageData);
+                    <img src="@src" alt="@a.NomArticle" height="70" width="50" />
+                }
+            </td>
+            <th>@Html.DisplayFor(modelItem => a.NomArticle)</th>
+            <th>@Html.DisplayFor(modelItem => a.Description)</th>
+            <th>@Html.DisplayFor(modelItem => a.Prix)</th>
+        </tr>
+    }
+</table>

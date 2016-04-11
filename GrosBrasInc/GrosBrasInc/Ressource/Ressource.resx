@@ -267,7 +267,25 @@
   <data name="Home_Index_Support" xml:space="preserve">
     <value>Support us</value>
   </data>
-  <data name="Home_Index_Welcome" xml:space="preserve">
-    <value>Welcome to GrosBrasInc</value>
+  <data name="Home_Index_GrosBrasInc" xml:space="preserve">
+    <value>GrosBrasInc</value>
+  </data>
+  <data name="Views_Recommandation_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Views_Recommandation_Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="Home_check_articles" xml:space="preserve">
+    <value>Check our inventory of supplements and training tools</value>
+  </data>
+  <data name="Home_Recommandations" xml:space="preserve">
+    <value>Favorite products</value>
+  </data>
+  <data name="Home_visit_us" xml:space="preserve">
+    <value>Visit us at our training center at Montreal</value>
+  </data>
+  <data name="Home_check_forum" xml:space="preserve">
+    <value>Discuss on our forum and get to know other bodubuilders</value>
   </data>
 </root>
