@@ -264,4 +264,10 @@
   <data name="View_Voir_Posts" xml:space="preserve">
     <value>Voir les messages</value>
   </data>
+  <data name="Home_Index_Support" xml:space="preserve">
+    <value>Supportez nous</value>
+  </data>
+  <data name="Home_Index_Welcome" xml:space="preserve">
+    <value>Bienvenue chez GrosBrasInc</value>
+  </data>
 </root>

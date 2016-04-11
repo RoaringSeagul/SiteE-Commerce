@@ -308,6 +308,15 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\ShoppingCartRemoveViewModel.cs" />
     <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
+    <Content Include="Media\Images\car_1.jpg" />
+    <Content Include="Media\Images\car_2.jpg" />
+    <Content Include="Media\Images\car_3.jpeg" />
+    <Content Include="Media\Images\car_4.png" />
+    <Content Include="Media\Images\car_5.jpg" />
+    <Content Include="Media\Images\facebook.png" />
+    <Content Include="Media\Images\Logo.png" />
+    <Content Include="Media\Images\twitter.png" />
+    <Content Include="Media\Images\YouTube.png" />
     <Content Include="Scripts\application.js" />
     <Content Include="Views\Checkout\AddressAndPayment.cshtml" />
     <Content Include="Views\Checkout\Complete.cshtml" />
