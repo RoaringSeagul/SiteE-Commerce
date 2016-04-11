@@ -38,11 +38,14 @@
             <td>
                 @Html.DisplayFor(modelItem => item.MessageBody)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.MessageID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.MessageID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.MessageID })
-            </td>
+            @if (User.IsInRole("Administrateur") || User.IsInRole("Modérateur"))
+            {
+                <td>
+                    @Html.ActionLink(GrosBrasInc.Ressource.Ressource.Global_Edit, "Edit", new { id = item.MessageID }) |
+                    @Html.ActionLink(GrosBrasInc.Ressource.Ressource.Global_Details, "Details", new { id = item.MessageID }) |
+                    @Html.ActionLink(GrosBrasInc.Ressource.Ressource.Global_Delete, "Delete", new { id = item.MessageID })
+                </td>
+            }
         </tr>
     }
 

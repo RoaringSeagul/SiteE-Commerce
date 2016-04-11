@@ -70,6 +70,7 @@ namespace GrosBrasInc.Controllers
         }
 
         // GET: Messages/Edit/5
+        [Authorize(Roles = "Administrateur,Modérateur")]
         public ActionResult Edit(int? id)
         {
             if (id == null)

@@ -8,9 +8,12 @@
     <title>Index</title>
 </head>
 <body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
+    @if (User.IsInRole("Administrateur") || User.IsInRole("Modérateur"))
+    {
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+    }
     <table class="table">
         <tr>
             <th>
@@ -21,24 +24,30 @@
             </th>
             <th></th>
         </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.SubjectTitle)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SubjectBody)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.SujetID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.SujetID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.SujetID }) |
-                @Html.ActionLink(GrosBrasInc.Ressource.Ressource.View_Voir_Posts, "Index", "Messages", new { id = item.SujetID }, null)
-            </td>
-        </tr>
-    }
-    
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubjectTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubjectBody)
+                </td>
+                @if (User.IsInRole("Administrateur") || User.IsInRole("Modérateur"))
+                {
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.SujetID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.SujetID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.SujetID })
+                    </td>
+                }
+                <td>
+                    @Html.ActionLink(GrosBrasInc.Ressource.Ressource.View_Voir_Posts, "Index", "Messages", new { id = item.SujetID }, null)
+                </td>
+            </tr>
+        }
+
     </table>
 </body>
 </html>
