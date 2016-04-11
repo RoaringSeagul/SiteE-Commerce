@@ -8,6 +8,10 @@ namespace GrosBrasInc.Controllers
 {
     public class HomeController : Controller
     {
+        public ActionResult TermofUse()
+        {
+            return View();
+        }
         public ActionResult Index()
         {
             return View();

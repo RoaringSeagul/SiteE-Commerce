@@ -270,4 +270,51 @@
   <data name="Home_Index_Welcome" xml:space="preserve">
     <value>Welcome to GrosBrasInc</value>
   </data>
+  <data name="View_terms_Accounts_title" xml:space="preserve">
+    <value>Accounts</value>
+  </data>
+  <data name="Views_terms_accounts_body" xml:space="preserve">
+    <value>Some services on the Sites permit or require you to create an account to participate or to secure additional benefits. You agree to provide, maintain and update true, accurate, current and complete information about yourself as prompted by our registration processes (the "Registration Data"). You shall not impersonate any person or entity or misrepresent your identity or affiliation with any person or entity, including using another person's username, password or other account information, or another person's name, likeness, voice, image or photograph. You also agree to promptly notify us of any unauthorized use of your username, password, other account information, or any other breach of security that you become aware of involving or relating to any Site.
+
+We may suspend or terminate your account and your ability to use any Site or portion thereof for failure to comply with these terms of use or any special terms related to a particular service, for infringing copyright, or for any other reason whatsoever.</value>
+  </data>
+  <data name="Views_terms_Copy_title" xml:space="preserve">
+    <value>claims of copyright infringement</value>
+  </data>
+  <data name="Views_terms_Copy_body" xml:space="preserve">
+    <value>We have adopted and implemented a policy that provides for the termination, in appropriate circumstances as determined by us in our sole discretion, of users who are infringers of copyright.
+
+Pursuant to Title 17, United States Code, Section 512(c)(2), notifications of claimed copyright infringement must be sent to our Designated Agent.
+
+Notification must be submitted to the following Designated Agent: Sarah Smith.
+
+Full Address of Designated Agent to Which Notification Should be Sent: 5777 N. Meeker Ave., Boise, ID 83713, USA, (208) 377-3326
+
+To be effective, the notification must be in writing and include each of the following: (a) a physical or electronic signature of person authorized to act on behalf of the owner of an exclusive right that is allegedly infringed; (b) identification of the copyrighted work claimed to have been infringed, or, if multiple copyrighted works at a single online site are covered by a single notification, a representative list of such works at that site; (c) identification of the material that is claimed to be infringing or to be the subject of infringing activity and that is to be removed or access to which is to be disabled, and information reasonably sufficient to permit us to locate the material; (d) information reasonably sufficient to permit us to contact the complaining party, such as an address, telephone number, and, if available, an electronic mail address at which the complaining party may be contacted; (e) a statement that the complaining party has a good-faith belief that use of the material in the manner complained of is not authorized by the copyright owner, its agent, or the law; and (f) a statement that the information in the notification is accurate, and under penalty of perjury, that the complaining party is authorized to act on behalf of the owner of an exclusive right that is allegedly infringed.
+</value>
+  </data>
+  <data name="Views_terms_Dis_title" xml:space="preserve">
+    <value>disclaimer</value>
+  </data>
+  <data name="Views_terms_dis_Body" xml:space="preserve">
+    <value>THE CONTENT ON OR OTHERWISE RELATED IN ANY WAY TO OUR SITES OR ANY THIRD PARTY SITES OR SERVICES LINKED TO FROM ANY SITE IS PROVIDED "AS IS" AND WITHOUT WARRANTIES OF ANY KIND. TO THE FULLEST EXTENT PERMISSIBLE PURSUANT TO APPLICABLE LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, COMPLETENESS, AVAILABILITY, SECURITY, COMPATABILITY AND NONINFRINGEMENT. WE DO NOT WARRANT THAT ANY CONTENT WILL BE ERROR-FREE, THAT ACCESS THERETO WILL BE UNINTERRUPTED, THAT DEFECTS WILL BE CORRECTED, OR THAT ANY SITE OR THE SERVERS THAT MAKE SUCH CONTENT AVAILABLE ARE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. MOREOVER, YOU ASSUME THE ENTIRE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION. WE DO NOT WARRANT OR MAKE ANY REPRESENTATIONS REGARDING THE USE OR THE RESULTS OF THE USE OF ANY CONTENT. YOU HEREBY IRREVOCABLY WAIVE ANY CLAIM AGAINST US WITH RESPECT TO CONTENT AND ANY CONTENT YOU PROVIDE TO THIRD PARTY SITES (INCLUDING CREDIT CARD AND OTHER PERSONAL INFORMATION).
+
+Furthermore, the Content is not intended to be a substitute for the services of trained professionals in any field, including, but not limited to, medical matters. Always seek the advice of your physician with any questions you may have regarding your physical or mental health and wellness. If you think you may have a medical emergency, call your doctor or 911 immediately. We make no representations or warranties concerning any treatment, action, application or usage of dietary supplements, medication, preparation or other product or service by any person following the information offered or provided within or through the Sites. Reliance on any information appearing on a Site is strictly at your own risk. Neither we, our affiliates nor any of the officers, directors, owners, employees, agents, representatives and assigns of each will be liable for any direct, indirect, consequential, special, exemplary or other losses or damages that may result including, but not limited to, economic loss, injury, illness or death.
+
+Sites may contain the opinions and views of other users. Given the interactive nature of these sites, we cannot endorse, guarantee, or be responsible for the accuracy, efficacy, or veracity of any content generated by our users.
+
+Site content is intended for educational and entertainment purposes only. Such content is not intended to, and does not, constitute legal, professional, medical or healthcare advice or diagnosis, and may not be used for such purposes. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical or wellness condition. You should not act or refrain from acting on the basis of any content included in, or accessible through, the Sites without seeking the appropriate medical or other professional advice on the particular facts and circumstances at issue from a doctor or other trained health care professional licensed in the recipient's state, country or other appropriate licensing jurisdiction.</value>
+  </data>
+  <data name="Views_About_body" xml:space="preserve">
+    <value>At Gros Bras Inc, we strive to offer the very best in bodybuilding supplements.  With our secure website, and our premium products, Gros Bras Inc is the best solution to all your muscle needs</value>
+  </data>
+  <data name="View_Terms_page" xml:space="preserve">
+    <value>Terms of use</value>
+  </data>
+  <data name="View_about_title" xml:space="preserve">
+    <value>about</value>
+  </data>
+  <data name="View_Contact_title" xml:space="preserve">
+    <value>Contact</value>
+  </data>
 </root>
