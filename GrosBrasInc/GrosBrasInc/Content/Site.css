@@ -6,9 +6,14 @@
     background: linear-gradient(#686868, #B5B5B5);
 }
 
+html, body {
+    min-height: 100%;
+}
+
 body {
     padding-top: 85px;
     padding-bottom: 20px;
+    background-repeat: no-repeat;
     background-color: #4b4b4b;
 
     background: #B5B5B5;
@@ -16,8 +21,6 @@ body {
     background: -o-linear-gradient(#686868, #B5B5B5);
     background: -moz-linear-gradient(#686868, #B5B5B5);
     background: linear-gradient(#686868, #B5B5B5);
-    background-repeat: no-repeat;
-    background-size: auto;
 }
 
 /* Set padding to keep content from hitting the edges */

@@ -1,14 +1,10 @@
 ﻿@model IEnumerable<GrosBrasInc.Models.Sujet>
 
-<!DOCTYPE html>
-
-<html>
-<div class="jumbotron" id="mainContent">
-    <head>
-        <meta name="viewport" content="width=device-width" />
-        <title>Index</title>
-    </head>
-    <body>
+@*<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>*@
+    <div class="jumbotron" id="mainContent">
         @if (User.IsInRole("Administrateur") || User.IsInRole("Modérateur"))
         {
             <p>
@@ -50,6 +46,4 @@
             }
 
         </table>
-    </body>
-</div>
-</html>
+    </div>
