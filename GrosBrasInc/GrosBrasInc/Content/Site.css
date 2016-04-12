@@ -16,6 +16,8 @@ body {
     background: -o-linear-gradient(#686868, #B5B5B5);
     background: -moz-linear-gradient(#686868, #B5B5B5);
     background: linear-gradient(#686868, #B5B5B5);
+    background-repeat: no-repeat;
+    background-size: auto;
 }
 
 /* Set padding to keep content from hitting the edges */

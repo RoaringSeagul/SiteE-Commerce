@@ -33,7 +33,8 @@
         {
             <tr>
                 <td>
-                    @{
+                    @if (item.ImageData != null)
+                    { 
                         string src;
                         src = "data:" + item.ImageType + ";base64," + Convert.ToBase64String(item.ImageData);
                         <img src="@src" alt="@item.NomArticle" height="70" width="50" />
