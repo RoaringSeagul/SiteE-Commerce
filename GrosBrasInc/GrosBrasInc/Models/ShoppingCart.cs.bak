@@ -7,60 +7,55 @@ using System.Web.Mvc;
 
 namespace GrosBrasInc.Models
 {
-    public class ShoppingCart
+    public class ShoppingCart : IShoppingCart
     {
-        private ApplicationDbContext db;
+        private IPanier db;
         string ShoppingCartID { get; set; }
         public static string CartSessionKey = "CartID";
 
         public ShoppingCart()
         {
-            db = new ApplicationDbContext();
+            db = new PanierImplementation();
         }
 
-        public ShoppingCart(ApplicationDbContext data)
+        public ShoppingCart(IPanier data)
         {
-            this.db = data;
+            this.db = data;  
         }
 
-        public static ShoppingCart GetCart(HttpContextBase context)
+        public static ShoppingCart GetCart()
         {
             var cart = new ShoppingCart();
-            cart.ShoppingCartID = cart.GetCartId(context);
+            cart.ShoppingCartID = cart.GetCartId();
             return cart;
         }
 
-        public static ShoppingCart GetCart(Controller controller)
+        public virtual string GetCartId()
         {
-            return GetCart(controller.HttpContext);
-        }
-
-        public virtual string GetCartId(HttpContextBase context)
-        {
-            if (context.Session[CartSessionKey] == null)
+            if (HttpContextManager.Current.Session[CartSessionKey] == null)
             {
-                if (!string.IsNullOrWhiteSpace(context.User.Identity.Name))
+                if (!string.IsNullOrWhiteSpace(HttpContextManager.Current.User.Identity.Name))
                 {
-                    context.Session[CartSessionKey] =
-                    context.User.Identity.Name;
+                    HttpContextManager.Current.Session[CartSessionKey] =
+                    HttpContextManager.Current.User.Identity.Name;
                 }
                 else
                 {
                     // Generate a new random GUID using System.Guid class
                     Guid tempCartId = Guid.NewGuid();
                     // Send tempCartId back to client as a cookie
-                    context.Session[CartSessionKey] = tempCartId.ToString();
+                    HttpContextManager.Current.Session[CartSessionKey] = tempCartId.ToString();
                 }
             }
-            return context.Session[CartSessionKey].ToString();
+            return HttpContextManager.Current.Session[CartSessionKey].ToString();
         }
 
         public void AddToCart(Article article)
         {
             // Get the matching cart and album instances
             var cartItem = db.Paniers.SingleOrDefault(
-                c => c.KeyPanier == ShoppingCartID && 
-                c.ArticleID == article.ArticleID);
+            c => c.KeyPanier == ShoppingCartID
+            && c.ArticleID == article.ArticleID);
             if (cartItem == null)
             {
                 // Create a new cart item if no cart item exists
@@ -119,12 +114,12 @@ namespace GrosBrasInc.Models
             db.SaveChanges();
         }
 
-        public virtual List<Panier> GetCartItems()
+        public List<Panier> GetCartItems()
         {
             return db.Paniers.Where(p => p.KeyPanier == ShoppingCartID).ToList();
         }
 
-        public virtual int GetCount()
+        public int GetCount()
         {
             // Get the count of each item in the cart and sum them up
             int? count = (from cartItems in db.Paniers

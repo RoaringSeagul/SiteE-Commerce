@@ -33,6 +33,11 @@ namespace GrosBrasInc.Models
             return new ApplicationDbContext();
         }
 
+        public void MarkAsModified(Panier item)
+        {
+            Entry(item).State = EntityState.Modified;
+        }
+
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<OrderDetails> OrdersDetails { get; set; }
         public virtual DbSet<Client> Clients { get; set; }
