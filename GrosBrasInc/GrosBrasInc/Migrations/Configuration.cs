@@ -21,7 +21,7 @@ namespace GrosBrasInc.Migrations
            AddUser(context);
            AddUserRole(context);
            AddArticlesCategorie(context);
-           //AddArticles(context);
+           AddArticles(context);
         }
 
         private void AddArticlesCategorie(ApplicationDbContext context)
