@@ -1,53 +1,49 @@
 ﻿@model IEnumerable<GrosBrasInc.Models.Sujet>
 
-<!DOCTYPE html>
-
-<html>
-<head>
+@*<head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
-</head>
-<body>
-    @if (User.IsInRole("Administrateur") || User.IsInRole("Modérateur"))
-    {
-        <p>
-            @Html.ActionLink("Create New", "Create")
-        </p>
-    }
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.SubjectTitle)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SubjectBody)
-            </th>
-            <th></th>
-        </tr>
-
-        @foreach (var item in Model)
+</head>*@
+    <div class="jumbotron" id="mainContent">
+        @if (User.IsInRole("Administrateur") || User.IsInRole("Modérateur"))
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SubjectTitle)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SubjectBody)
-                </td>
-                @if (User.IsInRole("Administrateur") || User.IsInRole("Modérateur"))
-                {
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.SujetID }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.SujetID }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.SujetID })
-                    </td>
-                }
-                <td>
-                    @Html.ActionLink(GrosBrasInc.Ressource.Ressource.View_Voir_Posts, "Index", "Messages", new { id = item.SujetID }, null)
-                </td>
-            </tr>
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
         }
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.SubjectTitle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SubjectBody)
+                </th>
+                <th></th>
+            </tr>
 
-    </table>
-</body>
-</html>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SubjectTitle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SubjectBody)
+                    </td>
+                    @if (User.IsInRole("Administrateur") || User.IsInRole("Modérateur"))
+                {
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.SujetID }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.SujetID }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.SujetID })
+                        </td>
+                    }
+                    <td>
+                        @Html.ActionLink(GrosBrasInc.Ressource.Ressource.View_Voir_Posts, "Index", "Messages", new { id = item.SujetID }, null)
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>

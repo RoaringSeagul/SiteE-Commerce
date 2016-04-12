@@ -23,6 +23,7 @@ namespace GrosBrasInc.Models
         [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Article_Categorie")]
         public virtual Categorie Categorie { get; set; }
         [ScaffoldColumn(false)]
+        public bool Recommandation { get; set; }
         public string ImageNom { get; set; }
         [ScaffoldColumn(false)]
         public string ImageType { get; set; }

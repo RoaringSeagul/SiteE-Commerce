@@ -24,6 +24,7 @@ namespace GrosBrasInc.Controllers
         }
 
         // GET: Messages/Details/5
+        [Authorize(Roles = "Administrateur,Modérateur")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -39,6 +40,7 @@ namespace GrosBrasInc.Controllers
         }
 
         // GET: Messages/Create
+        [Authorize(Roles = "Administrateur,Modérateur")]
         public ActionResult Create()
         {
             ViewBag.ApplicationUserID = new SelectList(db.Users, "Id", "Email");
@@ -106,6 +108,7 @@ namespace GrosBrasInc.Controllers
         }
 
         // GET: Messages/Delete/5
+        [Authorize(Roles = "Administrateur,Modérateur")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

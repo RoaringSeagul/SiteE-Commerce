@@ -16,7 +16,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="~/Views/Home/Index.cshtml"><img src="~/Media/Images/Logo.png" height="40" width="70" alt="logo" style="border-radius: 10px; margin-top: 10px" /></a>
+                <a href="../"><img src="~/Media/Images/Logo.png" height="40" width="70" alt="logo" style="border-radius: 10px; margin-top: 10px" /></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -43,8 +43,8 @@
                 <div class="col-lg-1">
                     <form id="formLang" method="post" role="form" class="form-inline" style="line-height: 50px;">
                         <select id="selectLang" class="form-control" name="lang">
-                            <option value="fr-CA" @(Culture == "fr-CA" ? "selected=\"selected\"" : "")>fr</option>
                             <option value="en-US" @(Culture == "en-US" ? "selected=\"selected\"" : "")>en</option>
+                            <option value="fr-CA" @(Culture == "fr-CA" ? "selected=\"selected\"" : "")>fr</option>
                         </select>
                     </form>
                 </div>

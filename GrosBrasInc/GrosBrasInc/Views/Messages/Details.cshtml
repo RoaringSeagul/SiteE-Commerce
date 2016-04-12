@@ -4,39 +4,41 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<div class="jumbotron" id="mainContent">
+    <h2>Details</h2>
 
-<div>
-    <h4>Message</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Author.Email)
-        </dt>
+    <div>
+        <h4>Message</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Author.Email)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Author.Email)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Author.Email)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ParentSujet.SubjectTitle)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.ParentSujet.SubjectTitle)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ParentSujet.SubjectTitle)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.ParentSujet.SubjectTitle)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MessageBody)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.MessageBody)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.MessageBody)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.MessageBody)
+            </dd>
 
-    </dl>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.MessageID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MessageID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
