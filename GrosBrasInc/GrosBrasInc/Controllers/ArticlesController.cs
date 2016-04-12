@@ -23,6 +23,7 @@ namespace GrosBrasInc.Controllers
         }
 
         // GET: Articles/Details/5
+        [Authorize(Roles = "Administrateur,Modérateur")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -38,6 +39,7 @@ namespace GrosBrasInc.Controllers
         }
 
         // GET: Articles/Create
+        [Authorize(Roles = "Administrateur,Modérateur")]
         public ActionResult Create()
         {
             ViewBag.Categories = new SelectList(db.Categories, "CategorieID", "NomCategorie");
@@ -69,6 +71,7 @@ namespace GrosBrasInc.Controllers
         }
 
         // GET: Articles/Edit/5
+        [Authorize(Roles = "Administrateur,Modérateur")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -108,6 +111,7 @@ namespace GrosBrasInc.Controllers
         }
 
         // GET: Articles/Delete/5
+        [Authorize(Roles = "Administrateur,Modérateur")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

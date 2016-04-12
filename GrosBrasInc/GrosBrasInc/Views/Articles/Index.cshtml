@@ -5,10 +5,12 @@
 }
 <div class="jumbotron" id="mainContent">
     <h2>Index</h2>
-
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
+    @if (User.IsInRole("Administrateur") || User.IsInRole("Modérateur"))
+    {
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+    }
     <table class="table">
         <tr>
             <th>
@@ -34,7 +36,7 @@
             <tr>
                 <td>
                     @if (item.ImageData != null)
-                    { 
+                    {
                         string src;
                         src = "data:" + item.ImageType + ";base64," + Convert.ToBase64String(item.ImageData);
                         <img src="@src" alt="@item.NomArticle" height="70" width="50" />
@@ -52,14 +54,19 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Prix)
                 </td>
+                @if (User.IsInRole("Administrateur") || User.IsInRole("Modérateur"))
+                {
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ArticleID }) | <br>
+                        @Html.ActionLink("Details", "Details", new { id = item.ArticleID }) | <br>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ArticleID }) | <br>
+                    </td>
+                }
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ArticleID }) | <br>
-                    @Html.ActionLink("Details", "Details", new { id = item.ArticleID }) | <br>
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ArticleID }) | <br>
                     @Html.ActionLink("Add to cart", "AddToCart", "Panier", new { id = item.ArticleID }, "")
                 </td>
             </tr>
-                        }
+        }
 
     </table>
 </div>

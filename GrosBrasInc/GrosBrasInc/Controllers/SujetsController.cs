@@ -21,6 +21,7 @@ namespace GrosBrasInc.Controllers
         }
 
         // GET: Sujets/Details/5
+        [Authorize(Roles = "Administrateur,Modérateur")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -60,6 +61,7 @@ namespace GrosBrasInc.Controllers
         }
 
         // GET: Sujets/Edit/5
+        [Authorize(Roles = "Administrateur,Modérateur")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -91,6 +93,7 @@ namespace GrosBrasInc.Controllers
         }
 
         // GET: Sujets/Delete/5
+        [Authorize(Roles = "Administrateur,Modérateur")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
