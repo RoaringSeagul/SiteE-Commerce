@@ -9,6 +9,7 @@ namespace GrosBrasInc.Controllers
 {
     public class HomeController : Controller
     {
+<<<<<<< HEAD
         ApplicationDbContext db = new ApplicationDbContext();
         [ChildActionOnly]
         public ActionResult _ListeRecommendation()
@@ -17,6 +18,12 @@ namespace GrosBrasInc.Controllers
             return View(articles);
         }
 
+=======
+        public ActionResult TermofUse()
+        {
+            return View();
+        }
+>>>>>>> 75b631b3364766816206c0c5e5d174a1acf063e5
         public ActionResult Index()
         {
             return View();

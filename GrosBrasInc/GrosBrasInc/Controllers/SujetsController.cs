@@ -36,6 +36,7 @@ namespace GrosBrasInc.Controllers
         }
 
         // GET: Sujets/Create
+        [Authorize(Roles = "Administrateur,Modérateur")]
         public ActionResult Create()
         {
             return View();

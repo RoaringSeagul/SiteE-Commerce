@@ -21,13 +21,20 @@
     }
     <table class="table">
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Author.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MessageBody)
-            </th>
-            <th></th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MessageBody)
+            </td>
+            @if (User.IsInRole("Administrateur") || User.IsInRole("Modérateur"))
+            {
+                <td>
+                    @Html.ActionLink(GrosBrasInc.Ressource.Ressource.Global_Edit, "Edit", new { id = item.MessageID }) |
+                    @Html.ActionLink(GrosBrasInc.Ressource.Ressource.Global_Details, "Details", new { id = item.MessageID }) |
+                    @Html.ActionLink(GrosBrasInc.Ressource.Ressource.Global_Delete, "Delete", new { id = item.MessageID })
+                </td>
+            }
         </tr>
 
         @foreach (var item in Model)
