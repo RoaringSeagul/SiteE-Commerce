@@ -1,17 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web;
 
 namespace GrosBrasInc.Models
 {
-    /// <summary>
-    /// Auteur: Jonathan Koch-Roy
-    /// Date: 
-    /// Description: 
-    /// </summary>
     public class HttpContextManager
     {
         private static HttpContextBase m_context;

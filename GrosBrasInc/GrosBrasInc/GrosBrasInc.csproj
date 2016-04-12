@@ -203,12 +203,12 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LegalController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <None Include="Controllers\PanierController.cs.bak" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\OrderDetailsController.cs" />
     <Compile Include="Controllers\PanierController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Controllers\SujetsController.cs" />
+    <Compile Include="Models\Client.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -288,7 +288,6 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\Categorie.cs" />
-    <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Commande.cs" />
     <Compile Include="Models\Forum.Message.cs" />
     <Compile Include="Models\Forum.Subject.cs" />
