@@ -241,7 +241,6 @@ namespace GrosBrasInc.Ressource {
         }
         
         /// <summary>
-<<<<<<< HEAD
         ///   Recherche une chaîne localisée semblable à Check our inventory of supplements and training tools.
         /// </summary>
         public static string Home_check_articles {
@@ -270,9 +269,7 @@ namespace GrosBrasInc.Ressource {
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Support us.
-=======
         ///   Looks up a localized string similar to Support us.
->>>>>>> 75b631b3364766816206c0c5e5d174a1acf063e5
         /// </summary>
         public static string Home_Index_Support {
             get {
@@ -281,11 +278,8 @@ namespace GrosBrasInc.Ressource {
         }
         
         /// <summary>
-<<<<<<< HEAD
         ///   Recherche une chaîne localisée semblable à Favorite products.
-=======
         ///   Looks up a localized string similar to Welcome to GrosBrasInc.
->>>>>>> 75b631b3364766816206c0c5e5d174a1acf063e5
         /// </summary>
         public static string Home_Recommandations {
             get {
@@ -609,30 +603,33 @@ namespace GrosBrasInc.Ressource {
         }
         
         /// <summary>
-<<<<<<< HEAD
         ///   Recherche une chaîne localisée semblable à Description.
         /// </summary>
-        public static string Views_Recommandation_Description {
-            get {
+        public static string Views_Recommandation_Description
+        {
+            get
+            {
                 return ResourceManager.GetString("Views_Recommandation_Description", resourceCulture);
-=======
+            }
+        }
         ///   Looks up a localized string similar to Some services on the Sites permit or require you to create an account to participate or to secure additional benefits. You agree to provide, maintain and update true, accurate, current and complete information about yourself as prompted by our registration processes (the &quot;Registration Data&quot;). You shall not impersonate any person or entity or misrepresent your identity or affiliation with any person or entity, including using another person&apos;s username, password or other account information, or another person [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Views_terms_accounts_body {
             get {
                 return ResourceManager.GetString("Views_terms_accounts_body", resourceCulture);
->>>>>>> 75b631b3364766816206c0c5e5d174a1acf063e5
             }
         }
         
         /// <summary>
-<<<<<<< HEAD
         ///   Recherche une chaîne localisée semblable à Product.
         /// </summary>
-        public static string Views_Recommandation_Product {
-            get {
+        public static string Views_Recommandation_Product
+        {
+            get
+            {
                 return ResourceManager.GetString("Views_Recommandation_Product", resourceCulture);
-=======
+            }
+        }
         ///   Looks up a localized string similar to We have adopted and implemented a policy that provides for the termination, in appropriate circumstances as determined by us in our sole discretion, of users who are infringers of copyright.
         ///
         ///Pursuant to Title 17, United States Code, Section 512(c)(2), notifications of claimed copyright infringement must be sent to our Designated Agent.
@@ -671,7 +668,6 @@ namespace GrosBrasInc.Ressource {
         public static string Views_terms_Dis_title {
             get {
                 return ResourceManager.GetString("Views_terms_Dis_title", resourceCulture);
->>>>>>> 75b631b3364766816206c0c5e5d174a1acf063e5
             }
         }
     }
