@@ -7,19 +7,19 @@
         <ul class="nav navbar-nav navbar-right">
             @if (User.Identity.IsAuthenticated)
             {
-                <li>@Html.ActionLink("View Orders", "Index", "OrderDetails")</li>
+                <li style="font-family: Palatino Linotype, Book Antiqua, Palatino, serif">@Html.ActionLink("View Orders", "Index", "OrderDetails")</li>
             }
-            <li>
+            <li style="font-family: Palatino Linotype, Book Antiqua, Palatino, serif">
                 @Html.ActionLink(GrosBrasInc.Ressource.Ressource.Views_LoginPartial_Hello + " " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
             </li>
-            <li><a href="javascript:document.getElementById('logoutForm').submit()">@GrosBrasInc.Ressource.Ressource.Views_LoginPartial_LogOff</a></li>
+            <li style="font-family: Palatino Linotype, Book Antiqua, Palatino, serif"><a href="javascript:document.getElementById('logoutForm').submit()">@GrosBrasInc.Ressource.Ressource.Views_LoginPartial_LogOff</a></li>
         </ul>
     }
 }
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink(GrosBrasInc.Ressource.Ressource.Views_LoginPartial_Register, "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink(GrosBrasInc.Ressource.Ressource.Views_LoginPartial_LogIn, "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        <li style="font-family: Palatino Linotype, Book Antiqua, Palatino, serif">@Html.ActionLink(GrosBrasInc.Ressource.Ressource.Views_LoginPartial_Register, "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li style="font-family: Palatino Linotype, Book Antiqua, Palatino, serif">@Html.ActionLink(GrosBrasInc.Ressource.Ressource.Views_LoginPartial_LogIn, "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
     </ul>
 }
