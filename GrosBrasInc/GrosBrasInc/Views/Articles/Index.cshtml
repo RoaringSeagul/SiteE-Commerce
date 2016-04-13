@@ -11,6 +11,14 @@
             @Html.ActionLink("Create New", "Create")
         </p>
     }
+    <div id="Recherche">
+        @using (Html.BeginForm("Index", "Jeux", FormMethod.Get, new { @class = "form-inline"}))
+        {
+            @Html.TextBox("searchTerm", null, new { @class = "form-control", @style = "width: 150px" })
+            <input type="submit" value= @GrosBrasInc.Ressource.Ressource.Articles_btn_research class="btn btn-default btn-primary">
+        }
+    </div>
+
     <table class="table">
         <tr>
             <th>

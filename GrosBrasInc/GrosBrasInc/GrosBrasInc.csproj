@@ -317,7 +317,10 @@
     <Content Include="Media\Images\car_3.jpg" />
     <Content Include="Media\Images\car_4.jpg" />
     <Content Include="Media\Images\facebook.png" />
+    <Content Include="Media\Images\gym_exterieur.jpg" />
+    <Content Include="Media\Images\Gym_interieur_weight.jpg" />
     <Content Include="Media\Images\Logo.png" />
+    <Content Include="Media\Images\Spacious_Gym_Floor.JPG" />
     <Content Include="Media\Images\thumbsup.png" />
     <Content Include="Media\Images\twitter.png" />
     <Content Include="Media\Images\YouTube.png" />

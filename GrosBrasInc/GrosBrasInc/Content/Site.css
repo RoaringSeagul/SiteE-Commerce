@@ -62,3 +62,9 @@ textarea {
     background-color: #2aace3;
     color: white;
 }
+
+.img_gym {
+    height: 250px;
+    width: 310px;
+    padding-bottom: 30px;
+}

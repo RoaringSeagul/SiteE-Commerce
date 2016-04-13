@@ -29,6 +29,9 @@ namespace GrosBrasInc
 
             bundles.Add(new ScriptBundle("~/bundles/application").Include(
                       "~/Scripts/application.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jqueryajax").Include(
+                "~/Scripts/jquery.unobtrusive*"));
         }
     }
 }

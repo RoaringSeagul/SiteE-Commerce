@@ -3,9 +3,15 @@
 }
 
 <div class="jumbotron" id="mainContent">
-    <h2>@ViewBag.Title.</h2>
+    <h2>@ViewBag.Title</h2>
 
     <p>@GrosBrasInc.Ressource.Ressource.Views_About_body</p>
 
+    <h2>@GrosBrasInc.Ressource.Ressource.About_us_gym_title</h2>
+    <p>@GrosBrasInc.Ressource.Ressource.About_us_gym_text_1 <a href="../Sujets">forum</a> @GrosBrasInc.Ressource.Ressource.About_us__gym_text_2</p>
+    <div class="col-lg-4"><img src="~/Media/Images/gym_exterieur.jpg" alt="photo" class="img_gym"/></div>
+    <div class="col-lg-4"><img src="~/Media/Images/Gym_interieur_weight.jpg" alt="photo" class="img_gym"/></div>
+    <div class="col-lg-4"><img src="~/Media/Images/Spacious_Gym_Floor.JPG" alt="photo" class="img_gym"/></div>
+    
     <p>@Html.ActionLink(GrosBrasInc.Ressource.Ressource.View_Terms_page, "TermofUse", "Home")</p>
 </div>

@@ -325,9 +325,45 @@ Le contenu du site est destiné uniquement à des fins éducatives et de diverti
     <value>Termes d'utilisation</value>
   </data>
   <data name="View_about_title" xml:space="preserve">
-    <value>A Propos</value>
+    <value>À Propos</value>
   </data>
   <data name="View_Contact_title" xml:space="preserve">
     <value>Nous Contacter</value>
+  </data>
+  <data name="Register_createnew" xml:space="preserve">
+    <value>Créer un nouveau compte</value>
+  </data>
+  <data name="Register_email" xml:space="preserve">
+    <value>Courriel</value>
+  </data>
+  <data name="Register_password" xml:space="preserve">
+    <value>Mot de passe</value>
+  </data>
+  <data name="Register_confirm_password" xml:space="preserve">
+    <value>Confirmer le mot de passe</value>
+  </data>
+  <data name="Register_password_compare" xml:space="preserve">
+    <value>Le mot de passe et le mot de passe de confirmation ne sont pas identiques</value>
+  </data>
+  <data name="Login_remember_user" xml:space="preserve">
+    <value>Mémoriser l'utilisateur?</value>
+  </data>
+  <data name="Register_button" xml:space="preserve">
+    <value>Inscription</value>
+  </data>
+  <data name="Login_button" xml:space="preserve">
+    <value>Connexion</value>
+  </data>
+  <data name="About_us_gym_title" xml:space="preserve">
+    <value>Notre centre de conditionnement physique</value>
+  </data>
+  <data name="About_us_gym_text_1" xml:space="preserve">
+    <value>En plus de vendre de nombreux produits en ligne pour accompagner votre entraînement, nous possédons un centre de conditionnement physique, où vous pouvez venir avec des partenaires que vous rencontrerez sur notre </value>
+  </data>
+  <data name="About_us__gym_text_2" xml:space="preserve">
+    <value>, ou simplement pour venir rencontrer d'autres culturistes!</value>
+  </data>
+  <data name="Articles_btn_research" xml:space="preserve">
+    <value>Recherche</value>
   </data>
 </root>

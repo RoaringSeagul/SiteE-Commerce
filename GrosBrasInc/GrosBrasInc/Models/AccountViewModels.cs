@@ -49,16 +49,16 @@ namespace GrosBrasInc.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Register_email")]
         [EmailAddress]
         public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Register_password")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Login_remember_user")]
         public bool RememberMe { get; set; }
     }
 
@@ -66,17 +66,17 @@ namespace GrosBrasInc.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Register_email")]
         public string Email { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Register_password")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Register_confirm_password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
@@ -85,17 +85,17 @@ namespace GrosBrasInc.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Register_email")]
         public string Email { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Register_password")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Register_confirm_password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
@@ -106,7 +106,7 @@ namespace GrosBrasInc.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Register_email")]
         public string Email { get; set; }
     }
 }

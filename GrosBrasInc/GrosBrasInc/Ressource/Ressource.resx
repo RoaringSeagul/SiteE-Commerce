@@ -330,9 +330,45 @@ Site content is intended for educational and entertainment purposes only. Such c
     <value>Terms of use</value>
   </data>
   <data name="View_about_title" xml:space="preserve">
-    <value>about</value>
+    <value>About</value>
   </data>
   <data name="View_Contact_title" xml:space="preserve">
     <value>Contact</value>
+  </data>
+  <data name="Register_createnew" xml:space="preserve">
+    <value>Create a new account</value>
+  </data>
+  <data name="Register_email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Register_password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Register_confirm_password" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="Register_password_compare" xml:space="preserve">
+    <value>The password and confirmation password do not match.</value>
+  </data>
+  <data name="Login_remember_user" xml:space="preserve">
+    <value>Remember me?</value>
+  </data>
+  <data name="Register_button" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Login_button" xml:space="preserve">
+    <value>LogIn</value>
+  </data>
+  <data name="About_us_gym_title" xml:space="preserve">
+    <value>Our training center</value>
+  </data>
+  <data name="About_us_gym_text_1" xml:space="preserve">
+    <value>In addition to selling training goodies online, we have a very complete training center, where you can come train with partners you meet on our </value>
+  </data>
+  <data name="About_us__gym_text_2" xml:space="preserve">
+    <value> , or simply to meet other bodybuilders!</value>
+  </data>
+  <data name="Articles_btn_research" xml:space="preserve">
+    <value>Research</value>
   </data>
 </root>
