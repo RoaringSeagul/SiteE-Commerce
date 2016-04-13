@@ -16,10 +16,14 @@ namespace GrosBrasInc.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Articles
-        public ActionResult Index()
+        public ActionResult Index(string searchTerm = null)
         {
-            var articles = db.Articles.Include(a => a.Categorie);
-            return View(articles.ToList());
+            IEnumerable<Article> lstArticles = db.Articles.Include(a => a.Categorie).ToList();
+
+            if (searchTerm != null)
+                lstArticles = db.Articles.Where(x => x.NomArticle.Contains(searchTerm)).Include(a => a.Categorie).ToList();
+
+            return View(lstArticles);
         }
 
         // GET: Articles/Details/5
