@@ -15,6 +15,7 @@ namespace GrosBrasInc.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationDbContext context = new ApplicationDbContext();
 
         public ManageController()
         {
@@ -64,6 +65,14 @@ namespace GrosBrasInc.Controllers
                 : "";
 
             var userId = User.Identity.GetUserId();
+
+            ApplicationUser u = context.Users.FirstOrDefault(x => x.Id == userId);
+
+            ViewBag.Client = context.Clients.FirstOrDefault(x => x.ApplicationUserID == u.Id);
+
+            if (u == null)
+                return HttpNotFound();
+
             var model = new IndexViewModel
             {
                 HasPassword = HasPassword(),
@@ -72,7 +81,8 @@ namespace GrosBrasInc.Controllers
                 Logins = await UserManager.GetLoginsAsync(userId),
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
             };
-            return View(model);
+
+            return View(u);
         }
 
         //

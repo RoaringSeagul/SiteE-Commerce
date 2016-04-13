@@ -401,6 +401,7 @@ namespace GrosBrasInc.Controllers
         //[ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
+            this.HttpContext.Session[ShoppingCart.CartSessionKey] = null;
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("Index", "Home");
         }

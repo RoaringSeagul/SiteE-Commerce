@@ -10,7 +10,17 @@ namespace GrosBrasInc.Controllers
 {
     public class PanierController : Controller
     {
-        ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db;
+
+        public PanierController()
+        {
+            this.db = new ApplicationDbContext();
+        }
+
+        public PanierController(ApplicationDbContext data)
+        {
+            this.db = data;
+        }
 
         // GET: ShoppingCart
         public ActionResult Index()
@@ -30,13 +40,10 @@ namespace GrosBrasInc.Controllers
         // GET: /Store/AddToCart/5
         public ActionResult AddToCart(int id)
         {
-            // Retrieve the album from the database
             var addedAlbum = db.Articles
             .Single(p => p.ArticleID == id);
-            // Add it to the shopping cart
             var cart = ShoppingCart.GetCart(this.HttpContext);
             cart.AddToCart(addedAlbum);
-            // Go back to the main store page for more shopping
             return RedirectToAction("Index");
         }
         //
