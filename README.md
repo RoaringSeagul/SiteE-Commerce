@@ -10,7 +10,7 @@
 8. [X] Un utilisateur doit absolument s’authentifier pour être capable d’acheter un produit. Cependant, un utilisateur qui ne s’authentifie pas peut ajouter des articles à son panier.
 9. [X] Permettre à un acheteur de faire un suivit de ses commandes (par exemple : payé, envoyé, en attente d’un commentaire, etc.). Il faut aussi prévoir une section qui permet la modification des informations du compte du client
 10. [X] Faire tous les tests nécessaires.
-11. [ ] Permettre à un utilisateur de chercher un produit.
+11. [X] Permettre à un utilisateur de chercher un produit.
 12. [X] Lien vers les réseaux sociaux.
 13. [ ] ~~Calculer automatiquement les frais de transport avec les services appropriés.~~
 14. [X] Ergonomie et esthétique dans l'ensemble du site Internet.
