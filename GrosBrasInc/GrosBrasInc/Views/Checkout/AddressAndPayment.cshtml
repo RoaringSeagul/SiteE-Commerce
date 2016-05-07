@@ -11,8 +11,8 @@
     </fieldset>
     <fieldset>
         <legend>Payment</legend>
-        <p>
-            We're running a promotion: all music is free
+        @*<p>
+            We're running a promotion: all supplelements are free
             with the promo code: "FREE"
         </p>
         <div class="editor-label">
@@ -20,7 +20,7 @@
         </div>
         <div class="editor-field">
             @Html.TextBox("PromoCode")
-        </div>
+        </div>*@
+    @Html.ActionLink("Payer", "Index", new { controller = "Paypal" }, new { @class = "btn btn-primary" })
     </fieldset>
-    <input type="submit" value="Submit Order" />
 }
