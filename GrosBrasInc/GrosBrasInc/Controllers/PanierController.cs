@@ -33,6 +33,9 @@ namespace GrosBrasInc.Controllers
                 CartTotal = cart.GetTotal(),
                 ShippingCost = cart.GetShippingCost()
             };
+
+            // FAIRE SELECT LIST
+
             // Return the view
             return View(viewModel);
         }

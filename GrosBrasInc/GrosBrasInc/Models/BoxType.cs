@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Module.Models
+namespace GrosBrasInc.Models
 {
     public enum BoxType
     {

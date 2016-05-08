@@ -146,7 +146,7 @@ namespace GrosBrasInc.Models
                               select (int?)cartItems.Count *
                               cartItems.Article.Prix).Sum();
 
-            total += GetShippingCost();
+            total += Convert.ToDouble(GetShippingCost().ListFraisdePort.First().Montant);
 
             return total ?? 0f;
         }
@@ -198,33 +198,48 @@ namespace GrosBrasInc.Models
             }
         }
 
-        public double GetShippingCost()
+        public Box GetShippingCost()
         {
-            double tot = 0;
             double weight = 0;
             double height = 0;
             double width = 0;
             double length = 0;
             List<Panier> lstArticles = db.Paniers.Where(p => p.KeyPanier == ShoppingCartID).ToList();
+            Box b = new Box();
+            b.ListFraisdePort = new List<FraisDePort>();
+            b.ListArticles = new List<Article>();
+            b.OriginAddress = "J2S1H9";
+            b.DestinationAddress = "J4B1K6";
 
             foreach (var i in lstArticles)
             {
+                b.ListArticles.Add(i.Article);
                 weight += i.Article.Poid;
                 height = (i.Article.Hauteur > height ? i.Article.Hauteur : height);
                 width += i.Article.Largeur / 4;
                 length += i.Article.Grandeur / 4;
             }
 
-            Box b = new Box();
             // Vérification de grosseur à faire dans un cas réel mais pour le cours nous allons considérer que la boîte est toujours medium
             b.BoxType = BoxType.MediumBox;
             b.WeightLb = weight;
 
+            // Estimation Purolator
             PurolatorShippingLogic puro = new PurolatorShippingLogic();
             GetQuickEstimateResponseContainer r = puro.CallGetQuickEstimate(b, "J4B1K6");
-            tot = Convert.ToDouble(r.ShipmentEstimates.First().TotalPrice);
 
-            return tot;
+            foreach (var i in r.ShipmentEstimates)
+            {
+                DateTime dt = Convert.ToDateTime(i.ExpectedDeliveryDate);
+                FraisDePort f = new FraisDePort("Purolator", i.ServiceID, i.ServiceID, i.TotalPrice, dt);
+                b.ListFraisdePort.Add(f);
+            }
+
+            // Estimation PosteCanada
+            PosteCanadaShippingLogic posCan = new PosteCanadaShippingLogic();
+            posCan.GetEstimate(b);
+
+            return b;
         }
     }
 }

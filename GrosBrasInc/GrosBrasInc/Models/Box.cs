@@ -4,15 +4,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Module.Models
+namespace GrosBrasInc.Models
 {
     public class Box
     {
+        public string OriginAddress { get; set; }
+        public string DestinationAddress { get; set; }
         public BoxType BoxType { get; set; }
         public double WeightLb { get; set; }
         public Dimension Length { get { return BoxTypeToDimensions(1); } }
         public Dimension Width { get { return BoxTypeToDimensions(2); } }
         public Dimension Height { get { return BoxTypeToDimensions(3); } }
+        public List<Article> ListArticles { get; set; }
+        public List<FraisDePort> ListFraisdePort { get; set; }
 
         internal Dimension BoxTypeToDimensions(byte b)
         {
