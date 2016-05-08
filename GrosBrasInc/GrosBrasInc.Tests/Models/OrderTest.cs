@@ -25,7 +25,9 @@ namespace GrosBrasInc.Tests.Models
             var obj = new Order()
             {
                 Username = "Test",
-                Address = "Test",
+                StreetNumber = "3000",
+                StreetName = "Boullé",
+                StreetType = "Avenue",
                 City = "test",
                 Country = "test",
                 Email = "test@test.ca",
@@ -33,9 +35,9 @@ namespace GrosBrasInc.Tests.Models
                 LastName = "test",
                 OrderDate = DateTime.Now,
                 OrderId = 1,
-                Phone = "435 546-7890",
+                PhoneNumber = "435 546-7890",
                 PostalCode = "test",
-                State = "test",
+                Province = "test",
                 Total = 12.66f
             };
             Assert.IsTrue(ValidateModel(obj).Count == 0);
@@ -47,7 +49,9 @@ namespace GrosBrasInc.Tests.Models
             var obj = new Order()
             {
                 Username = "Test",
-                Address = "Test",
+                StreetNumber = "3000",
+                StreetName = "Boullé",
+                StreetType = "Avenue",
                 City = "test",
                 Country = "test",
                 Email = "test@test.ca",
@@ -55,9 +59,9 @@ namespace GrosBrasInc.Tests.Models
                 LastName = "test",
                 OrderDate = DateTime.Now,
                 OrderId = 1,
-                Phone = "435 546-7890",
+                PhoneNumber = "435 546-7890",
                 PostalCode = "test",
-                State = "test",
+                Province = "test",
                 Total = 12.66f
             };
             Assert.IsTrue(ValidateModel(obj)[0].ErrorMessage == "First name is required");
@@ -69,7 +73,9 @@ namespace GrosBrasInc.Tests.Models
             var obj = new Order()
             {
                 Username = "Test",
-                Address = "Test",
+                StreetNumber = "3000",
+                StreetName = "Boullé",
+                StreetType = "Avenue",
                 City = "test",
                 Country = "test",
                 Email = "test@test.ca",
@@ -77,35 +83,37 @@ namespace GrosBrasInc.Tests.Models
                 LastName = null,
                 OrderDate = DateTime.Now,
                 OrderId = 1,
-                Phone = "435 546-7890",
+                PhoneNumber = "435 546-7890",
                 PostalCode = "test",
-                State = "test",
+                Province = "test",
                 Total = 12.66f
             };
             Assert.IsTrue(ValidateModel(obj)[0].ErrorMessage == "Last name is required");
         }
 
-        [Test]
-        public void ShouldNotPassTestDeValidationAddress()
-        {
-            var obj = new Order()
-            {
-                Username = "Test",
-                Address = null,
-                City = "test",
-                Country = "test",
-                Email = "test@test.ca",
-                FirstName = "Test",
-                LastName = "Test",
-                OrderDate = DateTime.Now,
-                OrderId = 1,
-                Phone = "435 546-7890",
-                PostalCode = "test",
-                State = "test",
-                Total = 12.66f
-            };
-            Assert.IsTrue(ValidateModel(obj)[0].ErrorMessage == "Address is required");
-        }
+        //[Test]
+        //public void ShouldNotPassTestDeValidationAddress()
+        //{
+        //    var obj = new Order()
+        //    {
+        //        Username = "Test",
+        //        StreetNumber = 3000,
+        //        StreetName = "Boullé",
+        //        StreetType = "Avenue",
+        //        City = "test",
+        //        Country = "test",
+        //        Email = "test@test.ca",
+        //        FirstName = "Test",
+        //        LastName = "Test",
+        //        OrderDate = DateTime.Now,
+        //        OrderId = 1,
+        //        Phone = "435 546-7890",
+        //        PostalCode = "test",
+        //        State = "test",
+        //        Total = 12.66f
+        //    };
+        //    Assert.IsTrue(ValidateModel(obj)[0].ErrorMessage == "Address is required");
+        //}
 
         [Test]
         public void ShouldNotPassTestDeValidationCity()
@@ -113,7 +121,9 @@ namespace GrosBrasInc.Tests.Models
             var obj = new Order()
             {
                 Username = "Test",
-                Address = "Test",
+                StreetNumber = "3000",
+                StreetName = "Boullé",
+                StreetType = "Avenue",
                 City = null,
                 Country = "test",
                 Email = "test@test.ca",
@@ -121,9 +131,9 @@ namespace GrosBrasInc.Tests.Models
                 LastName = "Test",
                 OrderDate = DateTime.Now,
                 OrderId = 1,
-                Phone = "435 546-7890",
+                PhoneNumber = "435 546-7890",
                 PostalCode = "test",
-                State = "test",
+                Province = "test",
                 Total = 12.66f
             };
             Assert.IsTrue(ValidateModel(obj)[0].ErrorMessage == "City is required");
@@ -135,7 +145,9 @@ namespace GrosBrasInc.Tests.Models
             var obj = new Order()
             {
                 Username = "Test",
-                Address = "Test",
+                StreetNumber = "3000",
+                StreetName = "Boullé",
+                StreetType = "Avenue",
                 City = "Test",
                 Country = "test",
                 Email = "test@test.ca",
@@ -143,9 +155,9 @@ namespace GrosBrasInc.Tests.Models
                 LastName = "Test",
                 OrderDate = DateTime.Now,
                 OrderId = 1,
-                Phone = "435 546-7890",
+                PhoneNumber = "435 546-7890",
                 PostalCode = "test",
-                State = null,
+                Province = null,
                 Total = 12.66f
             };
             Assert.IsTrue(ValidateModel(obj)[0].ErrorMessage == "State is required");
@@ -157,7 +169,9 @@ namespace GrosBrasInc.Tests.Models
             var obj = new Order()
             {
                 Username = "Test",
-                Address = "Test",
+                StreetNumber = "3000",
+                StreetName = "Boullé",
+                StreetType = "Avenue",
                 City = "Test",
                 Country = "test",
                 Email = "test@test.ca",
@@ -165,9 +179,9 @@ namespace GrosBrasInc.Tests.Models
                 LastName = "Test",
                 OrderDate = DateTime.Now,
                 OrderId = 1,
-                Phone = "435 546-7890",
+                PhoneNumber = "435 546-7890",
                 PostalCode = null,
-                State = "test",
+                Province = "test",
                 Total = 12.66f
             };
             Assert.IsTrue(ValidateModel(obj)[0].ErrorMessage == "Postal code is required");
@@ -179,7 +193,9 @@ namespace GrosBrasInc.Tests.Models
             var obj = new Order()
             {
                 Username = "Test",
-                Address = "Test",
+                StreetNumber = "3000",
+                StreetName = "Boullé",
+                StreetType = "Avenue",
                 City = "Test",
                 Country = null,
                 Email = "test@test.ca",
@@ -187,9 +203,9 @@ namespace GrosBrasInc.Tests.Models
                 LastName = "Test",
                 OrderDate = DateTime.Now,
                 OrderId = 1,
-                Phone = "435 546-7890",
+                PhoneNumber = "435 546-7890",
                 PostalCode = "test",
-                State = "test",
+                Province = "test",
                 Total = 12.66f
             };
             Assert.IsTrue(ValidateModel(obj)[0].ErrorMessage == "Country is required");
@@ -201,7 +217,9 @@ namespace GrosBrasInc.Tests.Models
             var obj = new Order()
             {
                 Username = "Test",
-                Address = "Test",
+                StreetNumber = "3000",
+                StreetName = "Boullé",
+                StreetType = "Avenue",
                 City = "Test",
                 Country = "Test",
                 Email = "test@test.ca",
@@ -209,9 +227,9 @@ namespace GrosBrasInc.Tests.Models
                 LastName = "Test",
                 OrderDate = DateTime.Now,
                 OrderId = 1,
-                Phone = null,
+                PhoneNumber = null,
                 PostalCode = "test",
-                State = "test",
+                Province = "test",
                 Total = 12.66f
             };
             Assert.IsTrue(ValidateModel(obj)[0].ErrorMessage == "Phone is required");
@@ -223,7 +241,9 @@ namespace GrosBrasInc.Tests.Models
             var obj = new Order()
             {
                 Username = "Test",
-                Address = "Test",
+                StreetNumber = "3000",
+                StreetName = "Boullé",
+                StreetType = "Avenue",
                 City = "Test",
                 Country = "Test",
                 Email = null,
@@ -231,9 +251,9 @@ namespace GrosBrasInc.Tests.Models
                 LastName = "Test",
                 OrderDate = DateTime.Now,
                 OrderId = 1,
-                Phone = "Test",
+                PhoneNumber = "Test",
                 PostalCode = "test",
-                State = "test",
+                Province = "test",
                 Total = 12.66f
             };
             Assert.IsTrue(ValidateModel(obj)[0].ErrorMessage == "Email Address is required");
@@ -245,7 +265,9 @@ namespace GrosBrasInc.Tests.Models
             var obj = new Order()
             {
                 Username = "Test",
-                Address = "Test",
+                StreetNumber = "3000",
+                StreetName = "Boullé",
+                StreetType = "Avenue",
                 City = "Test",
                 Country = "Test",
                 Email = "test",
@@ -253,9 +275,9 @@ namespace GrosBrasInc.Tests.Models
                 LastName = "Test",
                 OrderDate = DateTime.Now,
                 OrderId = 1,
-                Phone = "Test",
+                PhoneNumber = "Test",
                 PostalCode = "test",
-                State = "test",
+                Province = "test",
                 Total = 12.66f
             };
             Assert.IsTrue(ValidateModel(obj)[0].ErrorMessage == "Email is is not valid.");

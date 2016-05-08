@@ -17,7 +17,11 @@ namespace GrosBrasInc.Models
         public string Description { get; set; }
         [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Article_Prix")]
         [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = true)]
-        public float Prix { get; set; }
+        public double Prix { get; set; }
+        public double Poid { get; set; }
+        public double Hauteur { get; set; }
+        public double Largeur { get; set; }
+        public double Grandeur { get; set; }
         [ScaffoldColumn(false)]
         public int CategorieID { get; set; }
         [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Article_Categorie")]

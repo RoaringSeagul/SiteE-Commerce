@@ -30,7 +30,8 @@ namespace GrosBrasInc.Controllers
             var viewModel = new ShoppingCartViewModel
             {
                 CartItems = cart.GetCartItems(),
-                CartTotal = cart.GetTotal()
+                CartTotal = cart.GetTotal(),
+                ShippingCost = cart.GetShippingCost()
             };
             // Return the view
             return View(viewModel);

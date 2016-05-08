@@ -23,7 +23,7 @@ namespace GrosBrasInc.Models
         public int Quantity { get; set; }
         [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = true)]
         [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "OrderDetails_UnitPrice")]
-        public float UnitPrice { get; set; }
+        public double UnitPrice { get; set; }
         [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "OrderDetails_Article")]
         public virtual Article Article { get; set; }
         public virtual Order Order { get; set; }

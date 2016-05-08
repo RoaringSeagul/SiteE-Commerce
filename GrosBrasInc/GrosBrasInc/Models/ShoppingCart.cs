@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using GrosBrasInc.EstimatingProxy;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Module.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -134,21 +136,24 @@ namespace GrosBrasInc.Models
             return count ?? 0;
         }
 
-        public float GetTotal()
+        public double GetTotal()
         {
             // Multiply album price by count of that album to get
             // the current price for each of those albums in the cart
             // sum all album price totals to get the cart total
-            float? total = (from cartItems in db.Paniers
+            double? total = (from cartItems in db.Paniers
                               where cartItems.KeyPanier == ShoppingCartID
                               select (int?)cartItems.Count *
                               cartItems.Article.Prix).Sum();
+
+            total += GetShippingCost();
+
             return total ?? 0f;
         }
 
         public int CreateOrder(Order order)
         {
-            float orderTotal = 0;
+            double orderTotal = 0;
             var cartItems = GetCartItems();
             var user = new ApplicationUserManager(new UserStore<ApplicationUser>(db));
             // Iterate over the items in the cart,
@@ -191,6 +196,35 @@ namespace GrosBrasInc.Models
                 }
                 db.SaveChanges();
             }
+        }
+
+        public double GetShippingCost()
+        {
+            double tot = 0;
+            double weight = 0;
+            double height = 0;
+            double width = 0;
+            double length = 0;
+            List<Panier> lstArticles = db.Paniers.Where(p => p.KeyPanier == ShoppingCartID).ToList();
+
+            foreach (var i in lstArticles)
+            {
+                weight += i.Article.Poid;
+                height = (i.Article.Hauteur > height ? i.Article.Hauteur : height);
+                width += i.Article.Largeur / 4;
+                length += i.Article.Grandeur / 4;
+            }
+
+            Box b = new Box();
+            // Vérification de grosseur à faire dans un cas réel mais pour le cours nous allons considérer que la boîte est toujours medium
+            b.BoxType = BoxType.MediumBox;
+            b.WeightLb = weight;
+
+            PurolatorShippingLogic puro = new PurolatorShippingLogic();
+            GetQuickEstimateResponseContainer r = puro.CallGetQuickEstimate(b, "J4B1K6");
+            tot = Convert.ToDouble(r.ShipmentEstimates.First().TotalPrice);
+
+            return tot;
         }
     }
 }

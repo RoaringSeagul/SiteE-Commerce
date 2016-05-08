@@ -214,6 +214,12 @@
     <Compile Include="Controllers\PaypalController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Controllers\SujetsController.cs" />
+    <Compile Include="Migrations\201605081946165_UpdateDatabase.cs" />
+    <Compile Include="Migrations\201605081946165_UpdateDatabase.Designer.cs">
+      <DependentUpon>201605081946165_UpdateDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Box.cs" />
+    <Compile Include="Models\BoxType.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -307,8 +313,14 @@
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderDetails.cs" />
     <Compile Include="Models\Panier.cs" />
+    <Compile Include="Models\PurolatorShippingLogic.cs" />
     <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Ressource\Ressource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -317,6 +329,11 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\ShoppingCartRemoveViewModel.cs" />
     <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
+    <Compile Include="Web References\EstimatingProxy\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Content Include="Media\Images\car_1.jpg" />
     <Content Include="Media\Images\car_2.jpg" />
     <Content Include="Media\Images\car_3.jpg" />
@@ -363,6 +380,10 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -418,6 +439,17 @@
     <Content Include="Views\Articles\Edit.cshtml" />
     <Content Include="Views\Articles\Index.cshtml" />
     <Content Include="Views\Panier\Index.cshtml" />
+    <None Include="Web References\EstimatingProxy\EstimatingService.wsdl" />
+    <Content Include="Web References\EstimatingProxy\GetFullEstimateResponseContainer.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\EstimatingProxy\GetQuickEstimateResponseContainer.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\EstimatingProxy\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -489,11 +521,33 @@
     <EmbeddedResource Include="Migrations\201604111557093_Recommandation.resx">
       <DependentUpon>201604111557093_Recommandation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605081946165_UpdateDatabase.resx">
+      <DependentUpon>201605081946165_UpdateDatabase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ressource\Ressource.fr.resx" />
     <EmbeddedResource Include="Ressource\Ressource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Ressource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="C:\School\Hiver 2016\420-GEJ-HY\TP3\SiteE-Commerce\GrosBrasInc\GrosBrasInc\EstimatingService.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\EstimatingProxy\</RelPath>
+      <UpdateFromURL>C:\School\Hiver 2016\420-GEJ-HY\TP3\SiteE-Commerce\GrosBrasInc\GrosBrasInc\EstimatingService.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>GrosBrasInc_EstimatingProxy_EstimatingService</CachedSettingsPropName>
+    </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

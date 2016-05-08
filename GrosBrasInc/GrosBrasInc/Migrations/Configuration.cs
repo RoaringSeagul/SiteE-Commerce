@@ -21,7 +21,7 @@ namespace GrosBrasInc.Migrations
            AddUser(context);
            AddUserRole(context);
            AddArticlesCategorie(context);
-           //AddArticles(context);
+           AddArticles(context);
         }
 
         private void AddArticlesCategorie(ApplicationDbContext context)
@@ -43,15 +43,15 @@ namespace GrosBrasInc.Migrations
             Article[] articles =
             {
                 new Article() { NomArticle =  "Chest", Categorie = context.Categories.Where(p => p.NomCategorie == "Gros").FirstOrDefault(),
-                                    Description = "Des affaire pour un gros chest", Prix = 12.99f },
+                                    Description = "Des affaire pour un gros chest", Prix = 12.99f, Poid = 5 },
                 new Article() { NomArticle =  "Bras", Categorie = context.Categories.Where(p => p.NomCategorie == "Gros").FirstOrDefault(),
-                                    Description = "Des affaire pour un gros chest", Prix = 15.99f },
+                                    Description = "Des affaire pour un gros chest", Prix = 15.99f, Poid = 5 },
                 new Article() { NomArticle =  "Dos", Categorie = context.Categories.Where(p => p.NomCategorie == "Gros").FirstOrDefault(),
-                                    Description = "Des affaire pour un gros chest", Prix = 17.99f },
+                                    Description = "Des affaire pour un gros chest", Prix = 17.99f, Poid = 5 },
                 new Article() { NomArticle =  "Shake", Categorie = context.Categories.Where(p => p.NomCategorie == "Gros").FirstOrDefault(),
-                                    Description = "Des affaire pour un gros chest", Prix = 19.99f },
+                                    Description = "Des affaire pour un gros chest", Prix = 19.99f, Poid = 5 },
                 new Article() { NomArticle =  "Cancer", Categorie = context.Categories.Where(p => p.NomCategorie == "Gros").FirstOrDefault(),
-                                    Description = "Des affaire pour un gros chest", Prix = 256301.00f }
+                                    Description = "Des affaire pour un gros chest", Prix = 256301.00f, Poid = 5 }
             };
 
             context.Articles.AddOrUpdate(p => p.NomArticle, articles);

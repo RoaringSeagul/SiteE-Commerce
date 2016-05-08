@@ -77,7 +77,7 @@
                     @Html.ActionLink(item.Article.NomArticle, "Details", "Store", new { id = item.ArticleID }, null)
                 </td>
                 <td>
-                    @item.Article.Prix
+                    @item.Article.Prix.ToString("C")
                 </td>
                 <td id="item-count-@item.PanierID">
                     @item.Count
@@ -92,13 +92,19 @@
             </tr>
         }
         <tr>
+            <td>Shipping Cost</td>
+            <td></td>
+            <td></td>
+            <td>@Model.ShippingCost.ToString("C")</td>
+        </tr>
+        <tr>
             <td>
                 Total
             </td>
             <td></td>
             <td></td>
             <td id="cart-total">
-                @Model.CartTotal
+                @Model.CartTotal.ToString("C")
             </td>
         </tr>
     </table>

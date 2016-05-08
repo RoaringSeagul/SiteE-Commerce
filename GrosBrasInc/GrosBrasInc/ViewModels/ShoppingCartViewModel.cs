@@ -9,6 +9,7 @@ namespace GrosBrasInc.ViewModels
     public class ShoppingCartViewModel
     {
         public List<Panier> CartItems { get; set; }
-        public float CartTotal { get; set; }
+        public double ShippingCost { get; set; }
+        public double CartTotal { get; set; }
     }
 }

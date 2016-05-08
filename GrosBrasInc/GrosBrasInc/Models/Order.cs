@@ -12,6 +12,8 @@ namespace GrosBrasInc.Models
     {
         [ScaffoldColumn(false)]
         public int OrderId { get; set; }
+        public string Company { get; set; }
+        public string Departement { get; set; }
         [ScaffoldColumn(false)]
         [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Order_Username")]
         public string Username { get; set; }
@@ -28,7 +30,13 @@ namespace GrosBrasInc.Models
         [Required(ErrorMessage = "Address is required")]
         [StringLength(70)]
         [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Order_Address")]
-        public string Address { get; set; }
+        public string StreetNumber { get; set; }
+        public string StreetName { get; set; }
+        public string StreetType { get; set; }
+        public string Suite { get; set; }
+        public int Floor { get; set; }
+        public string StreetAddress2 { get; set; }
+        public string StreetAddress3 { get; set; }
         [Required(ErrorMessage = "City is required")]
         [StringLength(40)]
         [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Order_City")]
@@ -36,7 +44,7 @@ namespace GrosBrasInc.Models
         [Required(ErrorMessage = "State is required")]
         [StringLength(40)]
         [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Order_State")]
-        public string State { get; set; }
+        public string Province { get; set; }
         [Required(ErrorMessage = "Postal code is required")]
         [DisplayName("Postal Code")]
         [StringLength(10)]
@@ -49,7 +57,7 @@ namespace GrosBrasInc.Models
         [Required(ErrorMessage = "Phone is required")]
         [StringLength(24)]
         [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Order_Phone")]
-        public string Phone { get; set; }
+        public string PhoneNumber { get; set; }
         [Required(ErrorMessage = "Email Address is required")]
         [DisplayName("Email Address")]
         [RegularExpression(@"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}", ErrorMessage = "Email is is not valid.")]
@@ -59,8 +67,9 @@ namespace GrosBrasInc.Models
         [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = true)]
         [ScaffoldColumn(false)]
         [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Order_Total")]
-        public float Total { get; set; }
+        public double Total { get; set; }
         [Display(ResourceType = typeof(GrosBrasInc.Ressource.Ressource), Name = "Order_OrderDate")]
+        [ScaffoldColumn(false)]
         public System.DateTime OrderDate { get; set; }
         [ScaffoldColumn(false)]
         public List<OrderDetails> OrderDetails { get; set; }
