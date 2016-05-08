@@ -42,31 +42,31 @@ namespace GrosBrasInc.Controllers
                         amount = new Amount
                         {
                             currency = "CAD",
-                            total = (_total + 25).ToString(),
+                            total = (_total + 25).ToString("0.00"),
                             details = new Details
                             {
                                 tax = "15",
                                 shipping = "10",
-                                subtotal = _total.ToString()
+                                subtotal = _total.ToString("0.00")
                             }
                         },
                         item_list = new ItemList
                         {
                             items = ls.Select(x => new Item {
                                 sku = x.Article.ArticleID.ToString(),
-                                price = x.Article.Prix.ToString(),
+                                price = x.Article.Prix.ToString("0.00"),
                                 name = x.Article.NomArticle.ToString(),
                                 quantity = x.Count.ToString(),
                                 description = x.Article.Description,
                                 currency = "CAD",
-                                tax = (x.Article.Prix * 0.15).ToString()
+                                tax = (x.Article.Prix * 0.15).ToString("0.00")
                             }).ToList()
                         }
                     }
                 },
                 redirect_urls = new RedirectUrls
                 {
-                    return_url = "http://localhost:38716/Checkout/Complete",
+                    return_url = "http://localhost:38716/Panier",
                     cancel_url = "http://localhost:38716/Panier"
                 }
             });

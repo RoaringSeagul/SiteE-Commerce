@@ -54,20 +54,25 @@ namespace GrosBrasInc.Controllers
 
         //
         // GET: /Checkout/Complete
-        public ActionResult Complete(int id)
+        //public ActionResult Complete(int id)
+        //{
+        //    // Validate customer owns this order
+        //    bool isValid = db.Orders.Any(
+        //    o => o.OrderId == id &&
+        //    o.Username == User.Identity.Name);
+        //    if (isValid)
+        //    {
+        //        return View(id);
+        //    }
+        //    else
+        //    {
+        //        return View("Error");
+        //    }
+        //}
+
+        public ActionResult Complete()
         {
-            // Validate customer owns this order
-            bool isValid = db.Orders.Any(
-            o => o.OrderId == id &&
-            o.Username == User.Identity.Name);
-            if (isValid)
-            {
-                return View(id);
-            }
-            else
-            {
-                return View("Error");
-            }
+                return View();
         }
     }
 }
