@@ -146,7 +146,7 @@ namespace GrosBrasInc.Models
                               select (int?)cartItems.Count *
                               cartItems.Article.Prix).Sum();
 
-            if (total == 0)
+            if (montant == decimal.Zero)
                 total += Convert.ToDouble(GetShippingCost().ListFraisdePort.First().Montant);
             else
                 total += Convert.ToDouble(montant);
@@ -213,7 +213,7 @@ namespace GrosBrasInc.Models
             b.ListArticles = new List<Article>();
             b.OriginAddress = "J2S1H9";
             b.DestinationAddress = "J4B1K6";
-
+                
             foreach (var i in lstArticles)
             {
                 b.ListArticles.Add(i.Article);

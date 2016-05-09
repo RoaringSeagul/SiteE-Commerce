@@ -26,25 +26,31 @@ namespace GrosBrasInc.Controllers
         public ActionResult Index(string Value = "")
         {
             var cart = ShoppingCart.GetCart(this.HttpContext);
-            decimal total = 0;
+            decimal total = decimal.Zero;
+            string SelectedID = string.Empty;
 
             List<SelectListItem> lst = new List<SelectListItem>();
             foreach (var item in cart.GetShippingCost().ListFraisdePort)
             {
                 lst.Add(new SelectListItem() { Value = item.CodeService, Text = item.NomService + ": " + item.Montant.ToString("C") });
                 if (item.CodeService == Value)
+                {
                     total = item.Montant;
+                    SelectedID = item.CodeService;
+                }
             }
+
+            if (SelectedID == string.Empty)
+                SelectedID = lst.First().Value;
+
             // Set up our ViewModel
             var viewModel = new ShoppingCartViewModel
             {
                 CartItems = cart.GetCartItems(),
                 CartTotal = cart.GetTotal(total),
                 Items = lst,
-                SelectedItemID = lst.First().Value
+                SelectedItemID = SelectedID
             };
-
-            // FAIRE SELECT LIST
 
             // Return the view
             return View(viewModel);
