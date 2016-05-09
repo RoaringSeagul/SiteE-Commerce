@@ -23,25 +23,42 @@ namespace GrosBrasInc.Controllers
         }
 
         // GET: ShoppingCart
-        public ActionResult Index(string Value = "")
+        public ActionResult Index(string Value = "", string postalCode = "")
         {
             var cart = ShoppingCart.GetCart(this.HttpContext);
             decimal total = decimal.Zero;
             string SelectedID = string.Empty;
 
             List<SelectListItem> lst = new List<SelectListItem>();
-            foreach (var item in cart.GetShippingCost().ListFraisdePort)
+            if (postalCode != "" || cart.ClientPostalCode != null)
             {
-                lst.Add(new SelectListItem() { Value = item.CodeService, Text = item.NomService + ": " + item.Montant.ToString("C") });
-                if (item.CodeService == Value)
+                if (postalCode != "")
                 {
-                    total = item.Montant;
-                    SelectedID = item.CodeService;
+                    cart.ClientPostalCode = postalCode;
+                    this.HttpContext.Session[ShoppingCart.PostalCodeSessionKey] = postalCode;
                 }
-            }
+                else
+                    cart.ClientPostalCode = this.HttpContext.Session[ShoppingCart.PostalCodeSessionKey].ToString();
 
-            if (SelectedID == string.Empty)
-                SelectedID = lst.First().Value;
+                foreach (var item in cart.GetShippingCost().ListFraisdePort)
+                {
+                    lst.Add(new SelectListItem() { Value = item.CodeService, Text = item.NomService + ": " + item.Montant.ToString("C") });
+                    if (item.CodeService == Value)
+                    {
+                        total = item.Montant;
+                        SelectedID = item.CodeService;
+                        this.HttpContext.Session[ShoppingCart.SelectedId] = item.CodeService;
+                    }
+                }
+
+                if (SelectedID == string.Empty && lst.Count > 0)
+                    SelectedID = lst.First().Value;
+            }
+            else
+            {
+                lst.Add(new SelectListItem() { Value = "n/a", Text = "Enter Postal Code" });
+                SelectedID = "n/a";
+            }
 
             // Set up our ViewModel
             var viewModel = new ShoppingCartViewModel

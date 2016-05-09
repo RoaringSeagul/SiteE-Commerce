@@ -98,6 +98,14 @@
             <td>
                 @Html.DropDownListFor(x => x.SelectedItemID, new SelectList(Model.Items, "Value", "Text"), new { @class = "form-control", onchange = "document.location.href = '/Panier/Index?Value=' + this.options[this.selectedIndex].value;" })
             </td>
+            <td></td>
+            <td style="padding-left: 50px;">
+                @using (Html.BeginForm("Index", null, FormMethod.Get, new { @class = "form-inline" }))
+                {
+                    @Html.TextBox("postalCode", null, new { @class = "form-control", @style = "width: 150px", @placeholder = "Enter Postal Code" })
+                    <input type="submit" value="Calculate" class="btn btn-default btn-primary">
+                }
+            </td>
         </tr>
         <tr>
             <td>

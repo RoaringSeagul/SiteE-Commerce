@@ -11,12 +11,16 @@ namespace GrosBrasInc.Models
 {
     public class ShoppingCart
     {
+        public string ClientPostalCode { get; set; }
         private ApplicationDbContext db;
         string ShoppingCartID { get; set; }
         public static string CartSessionKey = "CartID";
+        public static string PostalCodeSessionKey = "PostalID";
+        public static string SelectedId = "SelectedID";
 
         public ShoppingCart()
         {
+            //ClientPostalCode = "";
             db = new ApplicationDbContext();
         }
 
@@ -29,6 +33,10 @@ namespace GrosBrasInc.Models
         {
             var cart = new ShoppingCart();
             cart.ShoppingCartID = cart.GetCartId(context);
+            if (context.Session[PostalCodeSessionKey] != null)
+                cart.ClientPostalCode = context.Session[PostalCodeSessionKey].ToString();
+            else if (context.Session[PostalCodeSessionKey] != null && cart.ClientPostalCode != null)
+                context.Session[PostalCodeSessionKey] = cart.ClientPostalCode;
             return cart;
         }
 
@@ -146,10 +154,10 @@ namespace GrosBrasInc.Models
                               select (int?)cartItems.Count *
                               cartItems.Article.Prix).Sum();
 
-            if (montant == decimal.Zero)
-                total += Convert.ToDouble(GetShippingCost().ListFraisdePort.First().Montant);
-            else
-                total += Convert.ToDouble(montant);
+            if (ClientPostalCode != null && ClientPostalCode != "")
+            {
+                    total += Convert.ToDouble(montant);
+            }
 
             return total ?? 0f;
         }
@@ -211,8 +219,10 @@ namespace GrosBrasInc.Models
             Box b = new Box();
             b.ListFraisdePort = new List<FraisDePort>();
             b.ListArticles = new List<Article>();
+
+            // L'adresse d'origine est celle du cégep
             b.OriginAddress = "J2S1H9";
-            b.DestinationAddress = "J4B1K6";
+            b.DestinationAddress = ClientPostalCode;
                 
             foreach (var i in lstArticles)
             {
@@ -227,20 +237,23 @@ namespace GrosBrasInc.Models
             b.BoxType = BoxType.MediumBox;
             b.WeightLb = weight;
 
-            // Estimation Purolator
-            PurolatorShippingLogic puro = new PurolatorShippingLogic();
-            GetQuickEstimateResponseContainer r = puro.CallGetQuickEstimate(b, "J4B1K6");
-
-            foreach (var i in r.ShipmentEstimates)
+            if (ClientPostalCode != "")
             {
-                DateTime dt = Convert.ToDateTime(i.ExpectedDeliveryDate);
-                FraisDePort f = new FraisDePort("Purolator", i.ServiceID, i.ServiceID, i.TotalPrice, dt);
-                b.ListFraisdePort.Add(f);
-            }
+                // Estimation Purolator
+                PurolatorShippingLogic puro = new PurolatorShippingLogic();
+                GetQuickEstimateResponseContainer r = puro.CallGetQuickEstimate(b, ClientPostalCode);
 
-            // Estimation PosteCanada
-            PosteCanadaShippingLogic posCan = new PosteCanadaShippingLogic();
-            posCan.GetEstimate(b);
+                foreach (var i in r.ShipmentEstimates)
+                {
+                    DateTime dt = Convert.ToDateTime(i.ExpectedDeliveryDate);
+                    FraisDePort f = new FraisDePort("Purolator", i.ServiceID, i.ServiceID, i.TotalPrice, dt);
+                    b.ListFraisdePort.Add(f);
+                }
+
+                // Estimation PosteCanada
+                PosteCanadaShippingLogic posCan = new PosteCanadaShippingLogic();
+                posCan.GetEstimate(b);
+            }
 
             return b;
         }

@@ -26,14 +26,16 @@ namespace GrosBrasInc.Controllers
             var accessToken = new OAuthTokenCredential(config).GetAccessToken();
             var apiContext = new APIContext(accessToken);
 
-            var payment = Payment.Create(apiContext, new Payment
+            try
             {
-                intent = "sale",
-                payer = new Payer
+                var payment = Payment.Create(apiContext, new Payment
                 {
-                    payment_method = "paypal"
-                },
-                transactions = new List<Transaction>
+                    intent = "sale",
+                    payer = new Payer
+                    {
+                        payment_method = "paypal"
+                    },
+                    transactions = new List<Transaction>
                 {
                     new Transaction
                     {
@@ -42,11 +44,11 @@ namespace GrosBrasInc.Controllers
                         amount = new Amount
                         {
                             currency = "CAD",
-                            total = (_total + 25).ToString("0.00"),
+                            total = (_total + Convert.ToDouble(cart.GetShippingCost().ListFraisdePort.Where(x => x.CodeService == this.HttpContext.Session[ShoppingCart.SelectedId].ToString()).First().Montant)).ToString("0.00"),
                             details = new Details
                             {
-                                tax = "15",
-                                shipping = "10",
+                                tax = "0",
+                                shipping = (cart.GetShippingCost().ListFraisdePort.Where(x => x.CodeService == this.HttpContext.Session[ShoppingCart.SelectedId].ToString()).First().Montant).ToString(),
                                 subtotal = _total.ToString("0.00")
                             }
                         },
@@ -58,20 +60,35 @@ namespace GrosBrasInc.Controllers
                                 name = x.Article.NomArticle.ToString(),
                                 quantity = x.Count.ToString(),
                                 description = x.Article.Description,
-                                currency = "CAD",
-                                tax = (x.Article.Prix * 0.15).ToString("0.00")
+                                currency = "CAD"//,
+                                //tax = (x.Article.Prix * 0.15).ToString("0.00")
                             }).ToList()
                         }
                     }
                 },
-                redirect_urls = new RedirectUrls
-                {
-                    return_url = "http://localhost:38716/Panier",
-                    cancel_url = "http://localhost:38716/Panier"
-                }
-            });
+                    redirect_urls = new RedirectUrls
+                    {
+                        return_url = "http://localhost:38716/Panier",
+                        cancel_url = "http://localhost:38716/Panier"
+                    }
+                });
 
-            return this.Redirect(payment.GetApprovalUrl());
+                return this.Redirect(payment.GetApprovalUrl());
+
+            }
+            catch (PayPal.HttpException ex)
+            {
+                if (ex.InnerException is PayPal.HttpException)
+                {
+                    this.HttpContext.Response.Write(ex.Response);
+                }
+                else
+                {
+                    this.HttpContext.Response.Write(ex.Message);
+                }
+            }
+
+            return null;
         }
     }
 }
