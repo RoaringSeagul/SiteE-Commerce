@@ -96,7 +96,7 @@
             <td></td>
             <td></td>
             <td>
-                
+                @Html.DropDownListFor(x => x.SelectedItemID, new SelectList(Model.Items, "Value", "Text"), new { @class = "form-control", onchange = "document.location.href = '/Panier/Index?Value=' + this.options[this.selectedIndex].value;" })
             </td>
         </tr>
         <tr>

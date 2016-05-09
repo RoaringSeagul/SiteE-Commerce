@@ -136,7 +136,7 @@ namespace GrosBrasInc.Models
             return count ?? 0;
         }
 
-        public double GetTotal()
+        public double GetTotal(decimal montant = 0)
         {
             // Multiply album price by count of that album to get
             // the current price for each of those albums in the cart
@@ -146,7 +146,10 @@ namespace GrosBrasInc.Models
                               select (int?)cartItems.Count *
                               cartItems.Article.Prix).Sum();
 
-            total += Convert.ToDouble(GetShippingCost().ListFraisdePort.First().Montant);
+            if (total == 0)
+                total += Convert.ToDouble(GetShippingCost().ListFraisdePort.First().Montant);
+            else
+                total += Convert.ToDouble(montant);
 
             return total ?? 0f;
         }
